@@ -60,7 +60,7 @@ const Header = () => {
                     <div className="w-[16%] h-[50px] px-[18px] py-[13px] bg-white rounded-xl border flex items-center justify-between">
                         <input
                             placeholder="Tìm kiếm"
-                            className="text-[#666666] flex-1 h-full outline-none bg-transparent text-[17px] font-normal font-['Manrope']"
+                            className="text-[#666666] w-[90%] h-full outline-none bg-transparent text-[17px] font-normal font-['Manrope']"
                         />
                         <div className="cursor-pointer">
                             <MagnifyingGlassGrey />
