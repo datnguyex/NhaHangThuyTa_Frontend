@@ -1,1 +1,9 @@
-export { MagnifyingGlassGrey, LocationWhite, ArrowWhiteRight, ArrowWhiteLeft } from './Icon';
+export {
+    MagnifyingGlassGrey,
+    LocationWhite,
+    ArrowWhiteRight,
+    ArrowWhiteLeft,
+    ListThreeDash,
+    CloseYellow,
+    ArrowDown,
+} from './Icon';

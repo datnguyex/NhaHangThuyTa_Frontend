@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { MainLogo } from '~/Images';
 
 interface BannerHomeProps {
@@ -38,11 +39,14 @@ function BannerHome({ bannerImg }: BannerHomeProps) {
                         sinh nhật...
                     </p>
                 </p>
-                <p className="cursor-pointer lg:py-[17px]  xs:px-[100px] mt-[100px] lg:px-[117px] bg-white rounded-[9px] flex justify-center items-center">
+                <Link
+                    to={'/menu'}
+                    className="cursor-pointer lg:py-[17px]  xs:px-[100px] mt-[100px] lg:px-[117px] bg-white rounded-[9px] flex justify-center items-center"
+                >
                     <p className="text-center text-[#c75d15] xs:py-[12px] xs:text-[16px] lg:text-[26px] font-bold font-['Manrope']">
                         Tìm hiểu ngay
                     </p>
-                </p>
+                </Link>
             </p>
         </div>
     );

@@ -144,3 +144,31 @@ export const ArrowWhiteLeft: React.FC<IconType> = ({ width = '2.4rem', height = 
         </svg>
     );
 };
+export const ListThreeDash: React.FC<IconType> = ({ width = '2.4rem', height = '2.4rem' }) => {
+    return (
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M7.5 18H28.5M7.5 10.5H28.5M7.5 25.5H18"
+                stroke="#3F3F41"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+        </svg>
+    );
+};
+export const CloseYellow: React.FC<IconType> = ({ width = '2.4rem', height = '2.4rem' }) => {
+    return (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3L17 17" stroke="#C75D15" stroke-width="3" stroke-linecap="round" />
+            <path d="M17 3L3 17" stroke="#C75D15" stroke-width="3" stroke-linecap="round" />
+        </svg>
+    );
+};
+export const ArrowDown: React.FC<IconType> = ({ width = '2.4rem', height = '2.4rem' }) => {
+    return (
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 3L7 8L12 3" stroke="#434146" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    );
+};

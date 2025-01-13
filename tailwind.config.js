@@ -9,7 +9,7 @@ module.exports = {
         // nhung da duoc fig voi jit
         extend: {
             screens: {
-                xs: { min: '300px', max: '600px' }, // breakpoint từ 400px đến 600px
+                xs: { min: '300px', max: '600px' },
             },
         },
     },
