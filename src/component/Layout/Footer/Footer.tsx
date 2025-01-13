@@ -4,7 +4,7 @@ import { FooterBackgroundDark, FooterFrame, MainLogo, ProductFooter } from '~/Im
 
 const Footer = () => {
     return (
-        <div className="sticky bg-[#6f6f6f] ">
+        <div className="bg-[#6f6f6f] relative mt-[50px]">
             <div
                 style={{
                     backgroundImage: `url(${FooterBackgroundDark})`,

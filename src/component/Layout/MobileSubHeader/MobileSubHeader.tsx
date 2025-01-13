@@ -19,8 +19,8 @@ const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handl
                 ${visibleSubMenu ? 'translate-x-0' : '-translate-x-full'} 
                 transition-transform duration-500 ease-out`}
             >
-                <div className="w-full h-[20%] flex flex-col justify-center relative">
-                    <div className="absolute right-5 top-5">
+                <div className="w-full h-[20%] flex flex-col justify-center relative ">
+                    <div className="absolute right-5 top-5 z-[100]">
                         <button onClick={() => handleVisible(false)}>
                             <CloseYellow />
                         </button>

@@ -20,7 +20,7 @@ const Header = () => {
                 <MobileSubHeader visibleSubMenu={visibleSubMenu} handleVisible={handleVisible} />
             </div>
 
-            <div className="xs:shadow-[0px_2px_7px_0px_rgba(0,0,0,0.12)] min-w-100vw w-[100vw] max-h-[110px] h-[110px] xs:bg-[white] lg:bg-transparent fixed">
+            <div className="xs:shadow-[0px_2px_7px_0px_rgba(0,0,0,0.12)] min-w-100vw w-[100vw] max-h-[110px] h-[110px] xs:bg-[white] lg:bg-transparent absolute z-[99]">
                 <div className="flex items-center justify-around h-full relative">
                     {/* logo */}
                     <div className="flex items-center justify-center h-full cursor-pointer">
@@ -31,31 +31,31 @@ const Header = () => {
                             <img className="w-full h-full object-cover" src={MainLogo} alt="" />
                         </div>
                         <div className="xs:hidden">
-                            <span className="text-[#434146] text-[25px] font-bold font-['MTD Valky Bold'] leading-[28.80px]">
+                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] leading-[28.80px]">
                                 Nhà hàn
                             </span>
-                            <span className="text-[#434146] text-[25px] font-bold font-['MTD Valky Bold'] leading-[28.80px]">
+                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] leading-[28.80px]">
                                 g<br />
                             </span>
-                            <span className="text-[#434146] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
+                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
                                 Thủy
                             </span>
-                            <span className="text-[#434146] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
+                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
                                 {' '}
                             </span>
-                            <span className="text-[#434146] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
+                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
                                 Tạ
                             </span>
-                            <span className="text-[#434146] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
+                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
                                 {' '}
                             </span>
-                            <span className="text-[#434146] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
+                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
                                 Đầm
                             </span>
-                            <span className="text-[#434146] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
+                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
                                 {' '}
                             </span>
-                            <span className="text-[#434146] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
+                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
                                 Sen
                             </span>
                         </div>
@@ -71,7 +71,7 @@ const Header = () => {
                             <div
                                 onMouseLeave={() => handleVisibleHall(false)}
                                 onMouseEnter={() => handleVisibleHall(true)}
-                                className="text-[#434146] text-[21px] font-bold font-['Manrope'] py-[10px]"
+                                className="text-[#fff] text-[21px] font-bold font-['Manrope'] py-[10px]"
                             >
                                 Sảnh tiệc
                             </div>
@@ -107,9 +107,9 @@ const Header = () => {
                             )}
                         </div>
                         <div className="justify-start items-start gap-2.5 inline-flex cursor-pointer">
-                            <div className="text-[#434146] text-[21px] font-bold font-['Manrope']">Phòng hội nghị</div>
+                            <div className="text-[#fff] text-[21px] font-bold font-['Manrope']">Phòng hội nghị</div>
                         </div>
-                        <div className="text-[#434146] text-[21px] font-bold font-['Manrope'] cursor-pointer">
+                        <div className="text-[#fff] text-[21px] font-bold font-['Manrope'] cursor-pointer">
                             Khuyến mãi tiệc cưới
                         </div>
                     </div>
