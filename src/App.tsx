@@ -9,6 +9,7 @@ import ThuyenRong from './Page/BanquestHall/ThuyenRong/ThuyenRong';
 import NganSen from './Page/BanquestHall/NganSen/NganSen';
 import KimSen from './Page/BanquestHall/KimSen/KimSen';
 import ThanhSen from './Page/BanquestHall/ThanhSen/ThanhSen';
+import PromotionWeddingParty from './Page/PromotionWeddingParty/PromotionWeddingParty';
 export default function App() {
     return (
         <Router>
@@ -19,6 +20,7 @@ export default function App() {
                 <Route path="hall-nganSen" element={<NganSen />} />
                 <Route path="hall-kimSen" element={<KimSen />} />
                 <Route path="hall-ThanhSen" element={<ThanhSen />} />
+                <Route path="khuyen-mai-tiec-cuoi" element={<PromotionWeddingParty />} />
             </Routes>
         </Router>
     );

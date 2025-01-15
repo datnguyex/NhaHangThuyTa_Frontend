@@ -60,3 +60,5 @@ export { default as NganSenImg7 } from './Items/tt_ngansen_img7.png';
 export { default as NganSenImg8 } from './Items/tt_ngansen_img8.png';
 export { default as NganSenImg9 } from './Items/tt_ngansen_img9.png';
 export { default as NganSenImg10 } from './Items/tt_ngansen_img10.png';
+
+export { default as ConferenceRoomImg } from './Items/tt_conferenceroomImg.png';

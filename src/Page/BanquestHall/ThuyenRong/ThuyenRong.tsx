@@ -72,7 +72,7 @@ function ThuyenRong() {
     return (
         <>
             <Header />
-            <div className="w-[100vw] mx-auto relative">
+            <div className="mx-auto relative">
                 <div className="xs:h-[270px] lg:h-[500px] w-auto relative">
                     <img className="w-full h-full object-cover" src={BannerTitleThuyenRong} alt="" />
                     <div className="xs:w-[90%] text-center absolute left-[50%] top-[50%] translate-x-[-50%] xs:translate-y-[20px] lg:translate-y-[-50%]">

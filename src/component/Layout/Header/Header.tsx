@@ -20,7 +20,7 @@ const Header = () => {
                 <MobileSubHeader visibleSubMenu={visibleSubMenu} handleVisible={handleVisible} />
             </div>
 
-            <div className="xs:shadow-[0px_2px_7px_0px_rgba(0,0,0,0.12)] min-w-100vw w-[100vw] max-h-[110px] h-[110px] xs:bg-[white] lg:bg-transparent absolute z-[99]">
+            <div className="xs:shadow-[0px_2px_7px_0px_rgba(0,0,0,0.12)] w-[97vw] max-h-[110px] h-[110px] xs:bg-[white] lg:bg-transparent absolute z-[99]">
                 <div className="flex items-center justify-around h-full relative">
                     {/* logo */}
                     <div className="flex items-center justify-center h-full cursor-pointer">
