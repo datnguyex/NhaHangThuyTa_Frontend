@@ -10,17 +10,19 @@ import NganSen from './Page/BanquestHall/NganSen/NganSen';
 import KimSen from './Page/BanquestHall/KimSen/KimSen';
 import ThanhSen from './Page/BanquestHall/ThanhSen/ThanhSen';
 import PromotionWeddingParty from './Page/PromotionWeddingParty/PromotionWeddingParty';
+import ConferenceRoom from './Page/ConferenceRoom/ConferenceRoom';
 export default function App() {
     return (
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="menu" element={<Menu />} />
-                <Route path="hall-thuyenRong" element={<ThuyenRong />} />
-                <Route path="hall-nganSen" element={<NganSen />} />
-                <Route path="hall-kimSen" element={<KimSen />} />
-                <Route path="hall-ThanhSen" element={<ThanhSen />} />
-                <Route path="khuyen-mai-tiec-cuoi" element={<PromotionWeddingParty />} />
+                <Route path="hall/thuyen-rong" element={<ThuyenRong />} />
+                <Route path="hall/ngan-sen" element={<NganSen />} />
+                <Route path="hall/kim-sen" element={<KimSen />} />
+                <Route path="hall/thanh-sen" element={<ThanhSen />} />
+                <Route path="wedding-party-promotion" element={<PromotionWeddingParty />} />
+                <Route path="room/conference" element={<ConferenceRoom />} />
             </Routes>
         </Router>
     );

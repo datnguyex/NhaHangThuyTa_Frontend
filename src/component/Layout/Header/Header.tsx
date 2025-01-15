@@ -1,15 +1,32 @@
 import { ListThreeDash, MagnifyingGlassGrey } from '~/component/Icon';
 import { MainLogo } from '~/Images';
 import MobileSubHeader from '../MobileSubHeader/MobileSubHeader';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-    const [visibleSubMenu, setVisibleSubMenu] = useState(false);
+    //get name url
+    const location = useLocation();
+    const [site, setSite] = useState<any>(location);
+    useEffect(() => {
+        const pathParts = location.pathname.split('/');
+        if (location.pathname.startsWith('/hall') || location.pathname.startsWith('/room')) {
+            setSite(pathParts[2]);
+        } else {
+            setSite(pathParts[1]);
+        }
+    }, [location]);
 
+    console.log('location', site);
+
+    //display mobile submenu
+    const [visibleSubMenu, setVisibleSubMenu] = useState(false);
     const handleVisible = (e: boolean) => {
         setVisibleSubMenu(e);
     };
 
+    //display list hall
     const [visibleHall, setVisibleHall] = useState(false);
     const handleVisibleHall = (e: boolean) => {
         setVisibleHall(e);
@@ -62,16 +79,20 @@ const Header = () => {
                     </div>
                     {/* //content */}
                     <div className="flex items-center gap-[60px] xs:hidden">
-                        <div className="justify-start items-start gap-2.5 inline-flex cursor-pointer">
-                            <div className="text-[#C75D15] text-[21px] font-bold font-['Manrope'] py-[10px]">
+                        <Link to={'/menu'} className="justify-start items-start gap-2.5 inline-flex cursor-pointer">
+                            <div
+                                className={`text-[21px] font-bold font-['Manrope'] py-[10px] 
+                                ${site == 'menu' ? 'text-[#C75D15]' : 'text-[#ffff] '}`}
+                            >
                                 Thực đơn
                             </div>
-                        </div>
+                        </Link>
                         <div className="justify-start items-start gap-2.5 inline-flex cursor-pointer">
                             <div
                                 onMouseLeave={() => handleVisibleHall(false)}
                                 onMouseEnter={() => handleVisibleHall(true)}
-                                className="text-[#fff] text-[21px] font-bold font-['Manrope'] py-[10px]"
+                                className={`text-[21px] font-bold font-['Manrope'] py-[10px] 
+                                 ${site == 'kim-sen' || site == 'ngan-sen' || site == 'thanh-sen' || site == 'thuyen-rong' ? 'text-[#C75D15]' : 'text-[#fff] '}`}
                             >
                                 Sảnh tiệc
                             </div>
@@ -81,37 +102,59 @@ const Header = () => {
                                     onMouseEnter={() => handleVisibleHall(true)}
                                     className="absolute top-[80px] h-64 bg-white rounded-lg shadow-[3px_4px_9px_0px_rgba(0,0,0,0.11)] flex-col justify-center items-start inline-flex transition-opacity duration-300 ease-in-out opacity-100"
                                 >
-                                    <div className="hover:bg-[#f0f0f0] active:bg-[#d0d0d0] pl-4 pr-[120px] py-[12px] border-b border-[#e0e0e0] justify-center items-center flex overflow-hidden">
+                                    <Link
+                                        to={'/hall/thuyen-rong'}
+                                        className="hover:bg-[#f0f0f0] active:bg-[#d0d0d0] pl-4 pr-[120px] py-[12px] border-b border-[#e0e0e0] justify-center items-center flex overflow-hidden"
+                                    >
                                         <div className="text-[#4f4f4f] text-[17px] font-normal font-['Manrope'] py-[10px]">
                                             Thuyền rồng Kim Long - Hoàng Long
                                         </div>
-                                    </div>
-                                    <div className="hover:bg-[#f0f0f0] w-[100%] active:bg-[#d0d0d0] pl-4 pr-[272px] py-[12px] border-b border-[#e0e0e0] justify-start items-center inline-flex overflow-hidden">
+                                    </Link>
+                                    <Link
+                                        to={'/hall/ngan-sen'}
+                                        className="hover:bg-[#f0f0f0] w-[100%] active:bg-[#d0d0d0] pl-4 pr-[272px] py-[12px] border-b border-[#e0e0e0] justify-start items-center inline-flex overflow-hidden"
+                                    >
                                         <div className="text-[#4f4f4f] text-[17px] font-normal font-['Manrope'] py-[10px]">
                                             Sảnh Ngân Sen
                                         </div>
-                                    </div>
-                                    <div className="hover:bg-[#f0f0f0] w-[100%] active:bg-[#d0d0d0] pl-4 pr-[191px] py-[12px] border-b border-[#e0e0e0] justify-start items-center inline-flex overflow-hidden">
+                                    </Link>
+                                    <Link
+                                        to={'/hall/kim-sen'}
+                                        className="hover:bg-[#f0f0f0] w-[100%] active:bg-[#d0d0d0] pl-4 pr-[191px] py-[12px] border-b border-[#e0e0e0] justify-start items-center inline-flex overflow-hidden"
+                                    >
                                         <div className="text-[#4f4f4f] text-[17px] font-normal font-['Manrope'] py-[10px]">
                                             Sảnh Hoàng Sen - Kim Sen
                                         </div>
-                                    </div>
-                                    <div className="hover:bg-[#f0f0f0] w-[100%] active:bg-[#d0d0d0] pl-4 pr-[264px] py-[12px] border-b justify-start items-center inline-flex overflow-hidden">
+                                    </Link>
+                                    <Link
+                                        to={'/hall/thanh-sen'}
+                                        className="hover:bg-[#f0f0f0] w-[100%] active:bg-[#d0d0d0] pl-4 pr-[264px] py-[12px] border-b justify-start items-center inline-flex overflow-hidden"
+                                    >
                                         <div className="text-[#4f4f4f] text-[17px] font-normal font-['Manrope'] py-[10px]">
                                             Sảnh Thanh Sen
                                         </div>
-                                    </div>
+                                    </Link>
                                 </div>
                             ) : (
                                 <div className="absolute top-[80px] h-64 bg-white rounded-lg shadow-[3px_4px_9px_0px_rgba(0,0,0,0.11)] flex-col justify-center items-start inline-flex transition-opacity duration-300 ease-in-out opacity-0" />
                             )}
                         </div>
                         <div className="justify-start items-start gap-2.5 inline-flex cursor-pointer">
-                            <div className="text-[#fff] text-[21px] font-bold font-['Manrope']">Phòng hội nghị</div>
+                            <Link
+                                to={'/room/conference'}
+                                className={`text-[21px] font-bold font-['Manrope'] py-[10px] 
+                                    ${site == 'conference' ? 'text-[#C75D15]' : 'text-[#fff] '}`}
+                            >
+                                Phòng hội nghị
+                            </Link>
                         </div>
-                        <div className="text-[#fff] text-[21px] font-bold font-['Manrope'] cursor-pointer">
+                        <Link
+                            to={'/wedding-party-promotion'}
+                            className={`text-[21px] font-bold font-['Manrope'] py-[10px] 
+                                ${site == 'wedding-party-promotion' ? 'text-[#C75D15]' : 'text-[#fff] '}`}
+                        >
                             Khuyến mãi tiệc cưới
-                        </div>
+                        </Link>
                     </div>
 
                     <div className="xs:hidden w-[16%] h-[50px] px-[18px] py-[13px] bg-white rounded-xl border flex items-center justify-between">

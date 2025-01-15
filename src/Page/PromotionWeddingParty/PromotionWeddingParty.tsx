@@ -6,7 +6,7 @@ function PromotionWeddingParty() {
     return (
         <>
             <Header />
-            <div className="min-h-[500px] w">
+            <div className="min-h-[500px]">
                 <div className="xs:h-[270px] lg:h-[500px] w-auto relative">
                     <img className="w-full h-full object-cover" src={BannerTitleThuyenRong} alt="" />
                     <div className="xs:w-[90%] text-center absolute left-[50%] top-[50%] translate-x-[-50%] xs:translate-y-[20px] lg:translate-y-[-50%]">
@@ -129,7 +129,7 @@ function PromotionWeddingParty() {
                                 <div className="grow shrink basis-0 flex-col justify-start items-start inline-flex">
                                     <div className="self-stretch h-[141px] px-2 py-3 bg-[#ffeed7] border border-[#c2c2c2] justify-center items-center gap-2 inline-flex">
                                         <div className="w-[145px] text-center text-[#c75d15] text-[19px] font-bold font-['Manrope'] leading-normal">
-                                            15-20
+                                            15-20``
                                         </div>
                                     </div>
                                     <div className="self-stretch h-[53px] px-2 py-3 border border-[#c2c2c2] justify-start items-center gap-2 inline-flex" />
