@@ -6,4 +6,7 @@ export {
     ListThreeDash,
     CloseYellow,
     ArrowDown,
+    EclipseBgContentMenu,
+    ArrowLeftBlack,
+    TitleListDishMenu,
 } from './Icon';
