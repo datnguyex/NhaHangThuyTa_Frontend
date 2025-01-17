@@ -1,6 +1,6 @@
 interface IconType {
-    width?: string;
-    height?: string;
+    width?: any;
+    height?: any;
 }
 export const MagnifyingGlassGrey: React.FC<IconType> = ({ width = '2.4rem', height = '2.4rem' }) => {
     return (
@@ -174,7 +174,9 @@ export const ArrowDown: React.FC<IconType> = ({ width = '2.4rem', height = '2.4r
 };
 export const EclipseBgContentMenu: React.FC<IconType> = ({ width = '2.4rem', height = '2.4rem' }) => {
     return (
-        <svg width="927" height="556" viewBox="0 0 927 556" fill="none" xmlns="http://www.w3.org/2000/svg">
+        // 375
+        // 254
+        <svg width={width} height={height} viewBox="0 0 927 556" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle opacity="0.3" cx="289.5" cy="-81.5" r="559" stroke="url(#paint0_linear_1_116)" stroke-width="157" />
             <defs>
                 <linearGradient
@@ -222,6 +224,67 @@ export const TitleListDishMenu: React.FC<IconType> = ({ width = '2.4rem', height
                 <clipPath id="clip0_1_65">
                     <rect width="160.8" height="84.09" fill="white" />
                 </clipPath>
+            </defs>
+        </svg>
+    );
+};
+export const MenuOrderIcon: React.FC<IconType> = ({ width = '2.4rem', height = '2.4rem' }) => {
+    return (
+        <svg width="48" height="61" viewBox="0 0 48 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d_596_13214)">
+                <rect x="4" y="13" width="40" height="40" rx="6" fill="#ED7D31" shape-rendering="crispEdges" />
+                <path
+                    d="M33.5423 31.1614H14.7336C14.452 31.1614 14.2369 30.8955 14.278 30.6028C15.0054 25.5486 19.1429 21.6797 24.137 21.6797C29.1329 21.6797 33.2685 25.5486 33.9959 30.6028C34.0389 30.8955 33.8238 31.1614 33.5423 31.1614Z"
+                    fill="white"
+                />
+                <path
+                    d="M26.1821 21.0612H22.0934C22.0328 21.0612 21.9858 21.0035 21.9937 20.9396C22.152 19.841 23.0515 19 24.1367 19C25.222 19 26.1214 19.841 26.2798 20.9396C26.2896 21.0035 26.2427 21.0612 26.1821 21.0612Z"
+                    fill="white"
+                />
+                <path
+                    d="M35.1847 33.4286H13.0891C12.7645 33.4286 12.5024 33.1524 12.5024 32.8103C12.5024 32.4681 12.7645 32.1919 13.0891 32.1919H35.1847C35.5093 32.1919 35.7713 32.4681 35.7713 32.8103C35.7713 33.1524 35.5093 33.4286 35.1847 33.4286Z"
+                    fill="white"
+                />
+                <path
+                    d="M20.6322 24.5467C19.2889 24.9445 18.2447 25.7958 17.6151 26.8388C17.4919 27.0387 17.2768 27.0841 17.1028 26.9336C16.9307 26.7831 16.8623 26.4904 16.9835 26.2802C17.6034 25.196 18.6612 24.2828 20.0417 23.817C20.3077 23.7263 20.6733 23.8376 20.8317 24.0458C20.9901 24.254 20.8904 24.4704 20.6322 24.5467Z"
+                    fill="#ED7D31"
+                />
+                <path
+                    d="M18.0566 45H17.2412V40.3027C17.2412 39.9316 17.264 39.4775 17.3096 38.9404H17.29C17.2119 39.2562 17.1419 39.4824 17.0801 39.6191L14.6875 45H14.2871L11.8994 39.6582C11.8311 39.502 11.7611 39.2627 11.6895 38.9404H11.6699C11.696 39.2204 11.709 39.6777 11.709 40.3125V45H10.918V37.998H12.002L14.1504 42.8809C14.3164 43.2552 14.4238 43.5352 14.4727 43.7207H14.502C14.6419 43.3366 14.7542 43.0501 14.8389 42.8613L17.0312 37.998H18.0566V45ZM23.2133 45H19.5023V37.998H23.057V38.7402H20.3227V41.0693H22.852V41.8066H20.3227V44.2578H23.2133V45ZM29.8055 45H28.7996L25.1961 39.4189C25.1049 39.279 25.0301 39.1325 24.9715 38.9795H24.9422C24.9682 39.1292 24.9812 39.4499 24.9812 39.9414V45H24.1609V37.998H25.2254L28.7312 43.4912C28.8777 43.7191 28.9721 43.8753 29.0145 43.96H29.034C29.0014 43.7581 28.9852 43.4147 28.9852 42.9297V37.998H29.8055V45ZM36.3635 42.168C36.3635 44.1341 35.4764 45.1172 33.7023 45.1172C32.0031 45.1172 31.1535 44.1715 31.1535 42.2803V37.998H31.9738V42.2266C31.9738 43.6621 32.5793 44.3799 33.7902 44.3799C34.9589 44.3799 35.5432 43.6865 35.5432 42.2998V37.998H36.3635V42.168Z"
+                    fill="white"
+                />
+            </g>
+            <path
+                d="M15 12.232V15.078C15 15.5872 15.4128 16 15.9219 16H33.0575C33.578 16 34 15.578 34 15.0575V12.507C34 9.50313 30.8526 7.53819 28.1538 8.85714L28.0378 8.60972C26.5147 5.36204 21.8442 5.51613 20.5385 8.85714C18.011 7.5533 15 9.38806 15 12.232Z"
+                fill="#E67020"
+            />
+            <defs>
+                <filter
+                    id="filter0_d_596_13214"
+                    x="0"
+                    y="13"
+                    width="48"
+                    height="48"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix
+                        in="SourceAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha"
+                    />
+                    <feOffset dy="4" />
+                    <feGaussianBlur stdDeviation="2" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix
+                        type="matrix"
+                        values="0 0 0 0 0.780392 0 0 0 0 0.364706 0 0 0 0 0.0823529 0 0 0 0.15 0"
+                    />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_596_13214" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_596_13214" result="shape" />
+                </filter>
             </defs>
         </svg>
     );

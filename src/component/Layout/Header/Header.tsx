@@ -18,8 +18,6 @@ const Header = () => {
         }
     }, [location]);
 
-    console.log('location', site);
-
     //display mobile submenu
     const [visibleSubMenu, setVisibleSubMenu] = useState(false);
     const handleVisible = (e: boolean) => {

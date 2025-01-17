@@ -1,3 +1,10 @@
 .menu-slider .slick-current .slick-current-child {
     background-color: #fff;
+    min-height: 180px;
+}
+.menu-slider .slick-prev::before {
+    display: none;
+}
+.menu-slider .slick-next::before {
+    display: none;
 }

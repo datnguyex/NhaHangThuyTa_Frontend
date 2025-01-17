@@ -9,4 +9,5 @@ export {
     EclipseBgContentMenu,
     ArrowLeftBlack,
     TitleListDishMenu,
+    MenuOrderIcon,
 } from './Icon';
