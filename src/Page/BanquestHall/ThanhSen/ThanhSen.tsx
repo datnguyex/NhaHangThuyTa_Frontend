@@ -1,8 +1,8 @@
 import Slider from 'react-slick';
 import Footer from '~/component/Layout/Footer/Footer';
 import Header from '~/component/Layout/Header/Header';
+
 import {
-    BannerTitleThuyenRong,
     ThanhSenImg1,
     ThanhSenImg2,
     ThanhSenImg3,
@@ -10,8 +10,6 @@ import {
     ThanhSenImg5,
     ThanhSenImg6,
     ThanhSenImg7,
-    KimSenImg1,
-    ThuyenRongImg1,
     ThanhSenImg8,
     BannerTitleThanhSen,
     ThanhSenImg10,
@@ -22,40 +20,21 @@ import {
     ThanhSenImg15,
     NganSenImg1,
 } from '~/Images';
+import { ref, get } from 'firebase/database';
+import { Databasez } from '~/firebase';
+import { useEffect, useState } from 'react';
+import SliderHall from '~/component/Layout/Slider/SliderCustom/SliderHall/SliderHall';
+import { fetchHallDataExcludingThanhSen } from '~/API/HallAPI';
 function ThanhSen() {
-    const sliderData = [
-        {
-            imageSrc: KimSenImg1,
-            title: 'Sảnh Kim Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: NganSenImg1,
-            title: 'Sảnh Ngân Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThuyenRongImg1,
-            title: 'Thuyền Rồng Kim Long',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: KimSenImg1,
-            title: 'Sảnh Kim Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: NganSenImg1,
-            title: 'Sảnh Ngân Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThuyenRongImg1,
-            title: 'Thuyền Rồng Kim Long',
-            date: '11/02/2020',
-        },
-    ];
+    const [DataSliderThanhSen, setDataSliderThanhSen] = useState<any>({});
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetchHallDataExcludingThanhSen();
+            setDataSliderThanhSen(data || {});
+        };
 
+        fetchData();
+    }, []);
     const settings = {
         infinite: true,
         speed: 500,
@@ -181,31 +160,7 @@ function ThanhSen() {
                     </div>
 
                     <div className="w-full h-auto xs:mb-[-30px]">
-                        <Slider {...settings}>
-                            {sliderData.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="w-full flex justify-center items-center px-[3px] outline-none border-none cursor-pointer"
-                                >
-                                    <img
-                                        className="object-cover w-[100%] xs:h-[131px] lg:h-[230px]"
-                                        src={item.imageSrc}
-                                        alt=""
-                                    />
-                                    <div className="justify-between w-full items-start inline-flex">
-                                        <div className="text-[#c75d15] xs:text-[14px] lg:text-[20px] font-bold font-['Manrope'] leading-[22.86px]">
-                                            {item.title}
-                                        </div>
-                                        <div className="justify-start items-center gap-1 flex">
-                                            <div className="relative" />
-                                            <div className="text-right text-[#666666] xs:text-[14px] lg:text-[20px] font-normal font-['Manrope'] leading-normal">
-                                                {item.date}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </Slider>
+                        <SliderHall sliderData={DataSliderThanhSen} settings={settings} />
                     </div>
                 </div>
             </div>

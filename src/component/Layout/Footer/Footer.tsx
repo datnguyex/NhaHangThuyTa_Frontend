@@ -4,7 +4,7 @@ import { FooterBackgroundDark, FooterFrame, MainLogo, ProductFooter } from '~/Im
 
 const Footer = () => {
     return (
-        <div className="bg-[#6f6f6f] relative mt-[50px]">
+        <div className="bg-[#6f6f6f] relative">
             <div
                 style={{
                     backgroundImage: `url(${FooterBackgroundDark})`,

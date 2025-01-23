@@ -11,6 +11,7 @@ import KimSen from './Page/BanquestHall/KimSen/KimSen';
 import ThanhSen from './Page/BanquestHall/ThanhSen/ThanhSen';
 import PromotionWeddingParty from './Page/PromotionWeddingParty/PromotionWeddingParty';
 import ConferenceRoom from './Page/ConferenceRoom/ConferenceRoom';
+
 export default function App() {
     return (
         <Router>

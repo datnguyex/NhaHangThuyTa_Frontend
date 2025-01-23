@@ -32,7 +32,7 @@ const Header = () => {
     return (
         <>
             <div className="lg:hidden">
-                <MobileSubHeader visibleSubMenu={visibleSubMenu} handleVisible={handleVisible} />
+                <MobileSubHeader visibleSubMenu={visibleSubMenu} handleVisible={handleVisible} site={site} />
             </div>
 
             <div className="xs:shadow-[0px_2px_7px_0px_rgba(0,0,0,0.12)] lg:w-[97vw] xs:w-[100vw] max-h-[110px] h-[110px] xs:bg-[white] lg:bg-transparent absolute z-[99]">
@@ -42,10 +42,10 @@ const Header = () => {
                         <div onClick={(e) => handleVisible(true)} className="lg:hidden absolute left-5">
                             <ListThreeDash />
                         </div>
-                        <div className="xs:w-[50px] xs:h-[50px] h-full mx-4 flex items-center">
+                        <Link to={'/'} className="xs:w-[50px] xs:h-[50px] h-full mx-4 flex items-center">
                             <img className="w-full h-full object-cover" src={MainLogo} alt="" />
-                        </div>
-                        <div className="xs:hidden">
+                        </Link>
+                        <Link to={'/'} className="xs:hidden">
                             <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] leading-[28.80px]">
                                 Nhà hàn
                             </span>
@@ -73,7 +73,7 @@ const Header = () => {
                             <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
                                 Sen
                             </span>
-                        </div>
+                        </Link>
                     </div>
                     {/* //content */}
                     <div className="flex items-center gap-[60px] xs:hidden">

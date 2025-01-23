@@ -9,47 +9,25 @@ import {
     NganSenImg5,
     NganSenImg6,
     NganSenImg7,
-    KimSenImg1,
-    ThanhSenImg1,
-    ThuyenRongImg1,
     BannerTitleNganSen,
     NganSenImg8,
     NganSenImg9,
 } from '~/Images';
+import { ref, get } from 'firebase/database';
+import { Databasez } from '~/firebase';
+import { useEffect, useState } from 'react';
+import SliderHall from '~/component/Layout/Slider/SliderCustom/SliderHall/SliderHall';
+import { fetchHallDataExcludingNganSen } from '~/API/HallAPI';
 function NganSen() {
-    const sliderData = [
-        {
-            imageSrc: KimSenImg1,
-            title: 'Sảnh Kim Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThuyenRongImg1,
-            title: 'Thuyền Rồng Kim Long',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThanhSenImg1,
-            title: 'Sảnh Thanh Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: KimSenImg1,
-            title: 'Sảnh Kim Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThuyenRongImg1,
-            title: 'Thuyền Rồng Kim Long',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThanhSenImg1,
-            title: 'Sảnh Thanh Sen',
-            date: '11/02/2020',
-        },
-    ];
+    const [DataSliderNganSen, setDataSliderNganSen] = useState<any>({});
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetchHallDataExcludingNganSen();
+            setDataSliderNganSen(data || {});
+        };
 
+        fetchData();
+    }, []);
     const settings = {
         infinite: true,
         speed: 500,
@@ -144,31 +122,7 @@ function NganSen() {
                     </div>
 
                     <div className="w-full h-auto xs:mb-[-30px]">
-                        <Slider {...settings}>
-                            {sliderData.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="w-full flex justify-center items-center px-[3px] outline-none border-none cursor-pointer"
-                                >
-                                    <img
-                                        className="object-cover w-[100%] xs:h-[131px] lg:h-[230px]"
-                                        src={item.imageSrc}
-                                        alt=""
-                                    />
-                                    <div className="justify-between w-full items-start inline-flex">
-                                        <div className="text-[#c75d15] xs:text-[14px] lg:text-[20px] font-bold font-['Manrope'] leading-[22.86px]">
-                                            {item.title}
-                                        </div>
-                                        <div className="justify-start items-center gap-1 flex">
-                                            <div className="relative" />
-                                            <div className="text-right text-[#666666] xs:text-[14px] lg:text-[20px] font-normal font-['Manrope'] leading-normal">
-                                                {item.date}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </Slider>
+                        <SliderHall sliderData={DataSliderNganSen} settings={settings} />
                     </div>
                 </div>
             </div>

@@ -4,76 +4,11 @@ import { Banner1, Banner2, Banner3 } from '~/Images';
 import './Home.css'; // Đảm bảo rằng bạn đã tạo các lớp CSS cần thiết trong Home.css
 import { ArrowWhiteLeft, ArrowWhiteRight } from '~/component/Icon';
 import BannerHome from '~/component/Layout/Banner/BannerHome';
+import { handlePrevClick, handleNextClick } from '~/component/Layout/Slider/HandleClick';
+import { CustomArrowNextHome, CustomArrowPrevHome } from '~/component/Layout/Slider/CustomArrow/CustomArrow';
 
 const Home = () => {
     const sliderRef = useRef<Slider | null>(null); // Dùng useRef để lưu trữ tham chiếu đến slider
-
-    const handleNextClick = () => {
-        if (sliderRef.current) {
-            sliderRef.current.slickNext();
-        }
-    };
-    const handlePrevClick = () => {
-        if (sliderRef.current) {
-            sliderRef.current.slickPrev();
-        }
-    };
-
-    const CustomArrowNext = (props: any) => {
-        return (
-            <div
-                {...props}
-                className="customNextBtn"
-                style={{
-                    position: 'absolute',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    right: '60px',
-                    color: 'red',
-                    width: '50px',
-                    height: '50px',
-                    textAlign: 'center',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderRadius: '50%',
-                    cursor: 'pointer',
-                    zIndex: 10,
-                }}
-                onClick={handleNextClick}
-            >
-                <ArrowWhiteRight />
-            </div>
-        );
-    };
-
-    const CustomArrowPrev = (props: any) => {
-        return (
-            <div
-                {...props}
-                className="customPrevBtn"
-                style={{
-                    position: 'absolute',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    left: '60px',
-                    color: 'red',
-                    width: '50px',
-                    height: '50px',
-                    textAlign: 'center',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderRadius: '50%',
-                    cursor: 'pointer',
-                    zIndex: 10,
-                }}
-                onClick={handlePrevClick}
-            >
-                <ArrowWhiteLeft />
-            </div>
-        );
-    };
 
     const settings = {
         dots: true,
@@ -82,8 +17,8 @@ const Home = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: false,
-        nextArrow: <CustomArrowNext />,
-        prevArrow: <CustomArrowPrev />,
+        nextArrow: <CustomArrowPrevHome onClick={() => handlePrevClick(sliderRef)} />,
+        prevArrow: <CustomArrowNextHome onClick={() => handleNextClick(sliderRef)} />,
     };
 
     return (

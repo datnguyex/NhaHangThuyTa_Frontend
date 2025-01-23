@@ -1,17 +1,33 @@
 import { ArrowDown, CloseYellow } from '~/component/Icon';
 import { MainLogo } from '~/Images';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 interface MobileSubHeaderProps {
     visibleSubMenu: boolean;
     handleVisible: (visible: boolean) => void;
+    site: any;
 }
 
-const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handleVisible }) => {
+const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handleVisible, site }) => {
     const [visibleHall, setVisibleHall] = useState(false);
     const handleVisibleHall = () => {
         setVisibleHall(!visibleHall);
     };
+
+    useEffect(() => {
+        if (visibleSubMenu) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cleanup on component unmount
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [visibleSubMenu]);
+
     return (
         <>
             <div
@@ -62,22 +78,43 @@ const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handl
                 </div>
                 <div>
                     <div className="w-full flex-col justify-start items-start gap-10 inline-flex">
-                        <div className="cursor-pointer px-0.5 border-[#c75d15] border-b-[1.5px] justify-center items-center gap-2.5 inline-flex">
-                            <div className="text-[#c75d15] text-[18px] font-bold font-['Manrope']">Thực đơn</div>
-                        </div>
-                        <div className="cursor-pointer px-0.5 h-[22px] pr-1 justify-start items-center inline-flex">
-                            <div className="text-[#434146] text-[18px] font-bold font-['Manrope']">Phòng hội nghị</div>
-                        </div>
-                        <div className="cursor-pointer px-0.5 h-[22px] pr-[5px] justify-start items-center inline-flex">
-                            <div className="text-[#434146] text-[18px] font-bold font-['Manrope']">
-                                Khuyến mãi tiệc cưới
+                        <Link
+                            to={'/menu'}
+                            className={`cursor-pointer px-0.5 ${site == 'menu' ? 'border-[#c75d15]' : ''}  border-b-[1.5px] justify-center items-center gap-2.5 inline-flex`}
+                        >
+                            <div
+                                className={`${site == 'menu' ? 'text-[#c75d15]' : 'text-[#434146]'} text-[18px] font-bold font-['Manrope']`}
+                            >
+                                Thực đơn
                             </div>
-                        </div>
+                        </Link>
+                        <Link
+                            to={'/room/conference'}
+                            className={`cursor-pointer px-0.5 ${site == 'conference' ? 'border-[#c75d15]' : ''}  border-b-[1.5px] justify-center items-center gap-2.5 inline-flex`}
+                        >
+                            <div
+                                className={`${site == 'conference' ? 'text-[#c75d15]' : 'text-[#434146]'} text-[18px] font-bold font-['Manrope']`}
+                            >
+                                Phòng hội nghị
+                            </div>
+                        </Link>
+                        <Link
+                            to={'/wedding-party-promotion'}
+                            className={`cursor-pointer px-0.5 ${site == 'wedding-party-promotion' ? 'border-[#c75d15]' : ''}  border-b-[1.5px] justify-center items-center gap-2.5 inline-flex`}
+                        >
+                            <div
+                                className={`${site == 'wedding-party-promotion' ? 'text-[#c75d15]' : 'text-[#434146]'} text-[18px] font-bold font-['Manrope']`}
+                            >
+                                Khuyến mãi tiệc cưới
+                            </div>
+                        </Link>
                         <div
                             onClick={() => handleVisibleHall()}
                             className="justify-center items-center gap-2.5 inline-flex"
                         >
-                            <div className="cursor-pointer px-0.5 text-[#434146] text-[18px] font-bold font-['Manrope']">
+                            <div
+                                className={`${site == 'thuyen-rong' || site == 'ngan-sen' || site == 'kin-sen' || site == 'thanh-sen' ? 'text-[#c75d15]' : 'text-[#434146]'} cursor-pointer px-0.5 text-[18px] font-bold font-['Manrope']`}
+                            >
                                 Sảnh tiệc
                             </div>
                             <div className="cursor-pointer">
@@ -87,24 +124,36 @@ const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handl
                         {visibleHall == true ? (
                             <div className="mt-[-3px] w-[272px] h-[164px] pb-[13px] flex-col justify-start items-start gap-[25px] inline-flex transition-all duration-300 ease-in-out opacity-100 transform translate-y-0">
                                 <div className="h-7 pr-[39px] pb-[9px] border-b justify-start items-center inline-flex">
-                                    <div className="cursor-pointer max-w-[284px]  text-[#4f4f4f] text-[15px] font-semibold font-['Manrope']">
+                                    <Link
+                                        to={'/hall/thuyen-rong'}
+                                        className={`cursor-pointer max-w-[284px]  ${site == 'thuyen-rong' ? 'text-[#c75d15]' : 'text-[#4f4f4f]'} text-[15px] font-semibold font-['Manrope']`}
+                                    >
                                         Thuyền rồng Kim Long - Hoàng Long
-                                    </div>
+                                    </Link>
                                 </div>
                                 <div className="h-7 pr-44 pb-[9px] border-b justify-start items-center inline-flex">
-                                    <div className="max-w-[277px]  cursor-pointer text-[#4f4f4f] text-[15px] font-semibold font-['Manrope']">
+                                    <Link
+                                        to={'/hall/ngan-sen'}
+                                        className={`max-w-[277px] cursor-pointer ${site == 'ngan-sen' ? 'text-[#c75d15]' : 'text-[#4f4f4f]'} text-[15px] font-semibold font-['Manrope']`}
+                                    >
                                         Sảnh Ngân Sen
-                                    </div>
+                                    </Link>
                                 </div>
                                 <div className="w-[277px] h-7 pr-[102px] pb-[9px] border-b justify-start items-center inline-flex">
-                                    <div className="cursor-pointer max-w-[277px]  text-[#4f4f4f] text-[15px] font-semibold font-['Manrope']">
-                                        Sảnh Hoàng Sen - Kim Sen
-                                    </div>
+                                    <Link
+                                        to={'/hall/hoang-sen'}
+                                        className={`max-w-[277px] cursor-pointer ${site == 'hoang-sen' ? 'text-[#c75d15]' : 'text-[#4f4f4f]'} text-[15px] font-semibold font-['Manrope']`}
+                                    >
+                                        Sảnh Hoàng Sen
+                                    </Link>
                                 </div>
                                 <div className="w-[277px] h-7 pr-[169px] pb-[9px] border-b justify-start items-center inline-flex">
-                                    <div className="cursor-pointer max-w-[277px]  text-[#4f4f4f] text-[15px] font-semibold font-['Manrope']">
+                                    <Link
+                                        to={'/hall/thanh-sen'}
+                                        className={`max-w-[277px] cursor-pointer ${site == 'thanh-sen' ? 'text-[#c75d15]' : 'text-[#4f4f4f]'} text-[15px] font-semibold font-['Manrope']`}
+                                    >
                                         Sảnh Thanh Sen
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
                         ) : (

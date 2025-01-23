@@ -1,6 +1,7 @@
 import Slider from 'react-slick';
 import Footer from '~/component/Layout/Footer/Footer';
 import Header from '~/component/Layout/Header/Header';
+import SliderHall from '~/component/Layout/Slider/SliderCustom/SliderHall/SliderHall';
 import {
     BannerTitleThuyenRong,
     ThuyenRongImg1,
@@ -10,49 +11,12 @@ import {
     ThuyenRongImg5,
     ThuyenRongImg6,
     ThuyenRongImg7,
-    KimSenImg1,
-    ThanhSenImg1,
-    NganSenImg1,
 } from '~/Images';
+import { useEffect, useState } from 'react';
+import { fetchHallDataExcludingThuyenRong } from '~/API/HallAPI';
 
 function ThuyenRong() {
-    const sliderData = [
-        {
-            imageSrc: KimSenImg1,
-            title: 'Sảnh Kim Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: NganSenImg1,
-            title: 'Sảnh Ngân Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThanhSenImg1,
-            title: 'Sảnh Thanh Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: KimSenImg1,
-            title: 'Sảnh Kim Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: NganSenImg1,
-            title: 'Sảnh Ngân Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThanhSenImg1,
-            title: 'Sảnh Thanh Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: NganSenImg1,
-            title: 'Sảnh Kim Sen',
-            date: '11/02/2020',
-        },
-    ];
+    const [DataSliderThuyenRong, setDataSliderThuyenRong] = useState<any>({});
 
     const settings = {
         infinite: true,
@@ -69,6 +33,16 @@ function ThuyenRong() {
             },
         ],
     };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetchHallDataExcludingThuyenRong();
+            setDataSliderThuyenRong(data || {}); // Đảm bảo DataSliderThuyenRong là đối tượng hợp lệ
+        };
+
+        fetchData();
+    }, []);
+
     return (
         <>
             <Header />
@@ -87,10 +61,7 @@ function ThuyenRong() {
                 </div>
                 <div className="xs:w-[90%] lg:w-[72%] mx-auto xs:mt-[20px] lg:mt-[50px] flex flex-col xs:gap-[12px]">
                     <img className="w-full bg-cover h-auto" src={ThuyenRongImg1} alt="" />
-                    <div
-                        className="text-[#3f3f41] 
-                       xs:text-[16px] lg:text-[22px] font-semibold font-['Manrope'] xs:leading-[21px] lg:leading-[30px]"
-                    >
+                    <div className="text-[#3f3f41] xs:text-[16px] lg:text-[22px] font-semibold font-['Manrope'] xs:leading-[21px] lg:leading-[30px]">
                         Điểm đập vào mắt du khách khi đến tham công viên văn hóa Đầm Sen, là hai chiếc thuyền rồng ngạo
                         nghễ rướn thân mình hướng ra giữa lòng hồ. Đây là hai sảnh của nhà hàng Thủy Tạ Đầm Sen có tên
                         gọi Kim Long và Hoàng Long.
@@ -141,27 +112,7 @@ function ThuyenRong() {
                     </div>
 
                     <div className="w-full h-auto">
-                        <Slider {...settings}>
-                            {sliderData.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="w-full flex justify-center items-center px-[3px] outline-none border-none cursor-pointer"
-                                >
-                                    <img className="object-cover w-[100%] h-[230px]" src={item.imageSrc} alt="" />
-                                    <div className="justify-between w-full items-start inline-flex">
-                                        <div className="text-[#c75d15] xs:text-[14px] lg:text-[20px] font-bold font-['Manrope'] leading-[22.86px]">
-                                            {item.title}
-                                        </div>
-                                        <div className="justify-start items-center gap-1 flex">
-                                            <div className="relative" />
-                                            <div className="text-right text-[#666666] xs:text-[14px] lg:text-[20px] font-normal font-['Manrope'] leading-normal">
-                                                {item.date}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </Slider>
+                        <SliderHall sliderData={DataSliderThuyenRong} settings={settings} />
                     </div>
                 </div>
             </div>

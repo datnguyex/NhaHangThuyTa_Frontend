@@ -1,8 +1,8 @@
 import Slider from 'react-slick';
 import Footer from '~/component/Layout/Footer/Footer';
 import Header from '~/component/Layout/Header/Header';
+import { fetchHallDataExcludingKimSen } from '~/API/HallAPI';
 import {
-    BannerTitleThuyenRong,
     KimSenImg1,
     KimSenImg2,
     KimSenImg3,
@@ -11,47 +11,24 @@ import {
     KimSenImg6,
     KimSenImg7,
     KimSenImg10,
-    ThanhSenImg1,
-    ThuyenRongImg1,
     KimSenImg8,
     KimSenImg9,
     BannerTitleKimSen,
     KimSenImg11,
 } from '~/Images';
-function KimSen() {
-    const sliderData = [
-        {
-            imageSrc: ThuyenRongImg1,
-            title: 'Thuyền Rồng Kim Long',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThuyenRongImg1,
-            title: 'Thuyền Rồng Kim Long',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThanhSenImg1,
-            title: 'Sảnh Thanh Sen',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThuyenRongImg1,
-            title: 'Thuyền Rồng Kim Long',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThuyenRongImg1,
-            title: 'Thuyền Rồng Kim Long',
-            date: '11/02/2020',
-        },
-        {
-            imageSrc: ThanhSenImg1,
-            title: 'Sảnh Thanh Sen',
-            date: '11/02/2020',
-        },
-    ];
 
+import { useEffect, useState } from 'react';
+import SliderHall from '~/component/Layout/Slider/SliderCustom/SliderHall/SliderHall';
+function KimSen() {
+    const [DataSliderKimSen, setDataSliderKimSen] = useState<any>({});
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetchHallDataExcludingKimSen();
+            setDataSliderKimSen(data || {});
+        };
+
+        fetchData();
+    }, []);
     const settings = {
         infinite: true,
         speed: 500,
@@ -164,32 +141,8 @@ function KimSen() {
                         </div>
                     </div>
 
-                    <div className="w-full h-auto xs:mb-[-30px]">
-                        <Slider {...settings}>
-                            {sliderData.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="w-full flex justify-center items-center px-[3px] outline-none border-none cursor-pointer"
-                                >
-                                    <img
-                                        className="object-cover w-[100%] xs:h-[131px] lg:h-[230px]"
-                                        src={item.imageSrc}
-                                        alt=""
-                                    />
-                                    <div className="justify-between w-full items-start inline-flex">
-                                        <div className="text-[#c75d15] xs:text-[14px] lg:text-[20px] font-bold font-['Manrope'] leading-[22.86px]">
-                                            {item.title}
-                                        </div>
-                                        <div className="justify-start items-center gap-1 flex">
-                                            <div className="relative" />
-                                            <div className="text-right text-[#666666] xs:text-[14px] lg:text-[20px] font-normal font-['Manrope'] leading-normal">
-                                                {item.date}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </Slider>
+                    <div className="w-full h-auto">
+                        <SliderHall sliderData={DataSliderKimSen} settings={settings} />
                     </div>
                 </div>
             </div>
