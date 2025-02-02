@@ -11,7 +11,7 @@ function PromotionWeddingParty() {
                 <div className="xs:h-[270px] lg:h-[500px] w-auto relative">
                     <img className="w-full h-full object-cover" src={BannerTitleThuyenRong} alt="" />
                     <div className="xs:w-[90%] text-center absolute left-[50%] top-[50%] translate-x-[-50%] xs:translate-y-[20px] lg:translate-y-[-50%]">
-                        <span className="text-white xs:text-[18px] lg:text-[40px] xs:leading-tight lg:leading-[48px] font-bold font-['MTD Valky Bold'] uppercase ">
+                        <span className="text-white xs:text-[18px] lg:text-[40px] xs:leading-tight lg:leading-[48px] font-bold   font-mtd-valky uppercase ">
                             Khuyễn Mãi Tiệc Cưới
                             <br />
                         </span>
@@ -22,7 +22,7 @@ function PromotionWeddingParty() {
                     <img className="w-full bg-cover h-auto xs:mt-[10px] lg:mt-[30px]" src={ConferenceRoomImg} alt="" />
                     {/* Bảng thông tin */}
                     <PromotionWeddingPartyTable />
-                    <div className="text-[#666666] xs:text-[15px] lg:text-[17px] xs:mt-[10px] lg:mt-[30px] w-full font-normal font-['Manrope']">
+                    <div className="text-[#666666] xs:text-[15px] lg:text-[17px] xs:mt-[10px] lg:mt-[30px] w-full font-normal font-manrope">
                         <ul className="list-disc pl-5">
                             <li>
                                 Quý khách vào dự tiệc tại nhà Thuỷ Tạ Đầm Sen được tham quan Công Viên Đầm Sen Miễn Phí

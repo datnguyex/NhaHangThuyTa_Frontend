@@ -8,4 +8,6 @@ export type {
     TypeItemThanhSen,
     TypeSliderThuyenRong,
     TypeItemThuyenRong,
+    TypeDish,
+    TypeListMenuProps,
 } from './Type';

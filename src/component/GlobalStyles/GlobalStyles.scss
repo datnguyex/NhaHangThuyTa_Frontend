@@ -12,3 +12,88 @@ body {
     font-size: 1.6rem;
     text-rendering: optimizeSpeed;
 }
+
+//mtdValky
+
+@font-face {
+    font-family: 'MTDValky';
+    src: url('../../Fonts/MTDValky/MTDValkyRegular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MTDValky';
+    src: url('../../Fonts/MTDValky/MTDValkyBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MTDValky';
+    src: url('../../Fonts/MTDValky/MTDValkyLight.otf') format('opentype');
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MTDValky';
+    src: url('../../Fonts/MTDValky/MTDValkySemibold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+//Manrope
+
+/* Regular */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../Fonts/Manrope/Manrope-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../Fonts/Manrope/Manrope-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ExtraBold */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../Fonts/Manrope/Manrope-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* Light */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../Fonts/Manrope/Manrope-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* ExtraLight */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../Fonts/Manrope/Manrope-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../Fonts/Manrope/Manrope-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* SemiBold */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../Fonts/Manrope/Manrope-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}

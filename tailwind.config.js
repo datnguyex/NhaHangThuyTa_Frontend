@@ -5,9 +5,11 @@ module.exports = {
     mode: 'jit',
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
-        //o day dinh nghia 1 so mau hay khoang cach ma tailwind khong co
-        // nhung da duoc fig voi jit
         extend: {
+            fontFamily: {
+                manrope: ['Manrope', 'sans-serif'],
+                'mtd-valky': ['MTDValky', 'sans-serif'],
+            },
             screens: {
                 xs: { min: '300px', max: '600px' },
             },

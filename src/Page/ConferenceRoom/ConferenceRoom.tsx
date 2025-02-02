@@ -11,7 +11,7 @@ function ConferenceRoom() {
                 <div className="xs:h-[270px] lg:h-[500px] w-auto relative">
                     <img className="w-full h-full object-cover" src={BannerTitleThuyenRong} alt="" />
                     <div className="xs:w-[90%] text-center absolute left-[50%] top-[50%] translate-x-[-50%] xs:translate-y-[40px] lg:translate-y-[-50%]">
-                        <span className="text-white xs:text-[18px] lg:text-[40px] xs:leading-tight lg:leading-[48px] font-bold font-['MTD Valky Bold'] uppercase ">
+                        <span className="text-white xs:text-[18px] lg:text-[40px] xs:leading-tight lg:leading-[48px] font-bold   font-mtd-valky uppercase ">
                             Phòng Hội Nghị
                             <br />
                         </span>
@@ -24,10 +24,10 @@ function ConferenceRoom() {
                         alt=""
                     />
                     <div className="xs:my-[10px] lg:my-[30px]">
-                        <div className="text-[#ed7d31] sx:text-[18px] lg:text-[36px] font-bold font-['Manrope']">
+                        <div className="text-[#ed7d31] sx:text-[18px] lg:text-[36px] font-bold font-manrope">
                             Giá cho thuê phòng hội nghị
                         </div>
-                        <div className="text-[#666666] text-[16px] font-normal font-['Manrope']">
+                        <div className="text-[#666666] text-[16px] font-normal font-manrope">
                             (Đã bao gồm 10% thuế VAT)
                         </div>
                     </div>

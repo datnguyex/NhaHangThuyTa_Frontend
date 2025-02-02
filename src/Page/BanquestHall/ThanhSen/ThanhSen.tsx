@@ -57,11 +57,11 @@ function ThanhSen() {
                 <div className="xs:h-[270px] lg:h-[500px] w-auto relative">
                     <img className="w-full h-full object-cover" src={BannerTitleThanhSen} alt="" />
                     <div className="xs:w-[90%] text-center absolute left-[50%] top-[50%] translate-x-[-50%] xs:translate-y-[20px] lg:translate-y-[-50%]">
-                        <span className="text-white xs:text-[18px] lg:text-[40px] xs:leading-tight lg:leading-[48px] font-bold font-['MTD Valky Bold'] uppercase ">
+                        <span className="text-white xs:text-[18px] lg:text-[40px] xs:leading-tight lg:leading-[48px] font-bold   font-mtd-valky uppercase ">
                             Sảnh
                             <br />
                         </span>
-                        <span className=" text-white xs:text-[18px] lg:text-[26px] xs:leading-loose lg:leading-[76.80px]  font-bold font-['MTD Valky Bold'] uppercase leading-[76.80px]">
+                        <span className=" text-white xs:text-[18px] lg:text-[26px] xs:leading-loose lg:leading-[76.80px]  font-bold   font-mtd-valky uppercase leading-[76.80px]">
                             Thanh Sen
                         </span>
                     </div>
@@ -70,13 +70,13 @@ function ThanhSen() {
                     <img className="w-full bg-cover h-auto" src={ThanhSenImg1} alt="" />
                     <div
                         className="text-[#3f3f41] lg:my-[20px] xs:[15px]
-                   xs:text-[16px] lg:text-[22px] font-semibold font-['Manrope'] xs:leading-[21px] lg:leading-[30px]"
+                   xs:text-[16px] lg:text-[22px] font-semibold font-manrope xs:leading-[21px] lg:leading-[30px]"
                     >
                         Là sảnh đẹp nhất với không gian mở hướng ra hồ bán nguyệt của CVVH Đầm Sen. Với diện tích 862m2,
                         sảnh Thanh Sen có thể tiếp 62 bàn (khoảng 750 khách)
                     </div>
 
-                    <div className="text-[#3f3f41] xs:mb-[8px] lg:mb-[15px] xs:text-[16px] xs:leading-[21px] lg:leading-normal text-[18px] font-normal font-['Manrope'] leading-normal">
+                    <div className="text-[#3f3f41] xs:mb-[8px] lg:mb-[15px] xs:text-[16px] xs:leading-[21px] lg:leading-normal text-[18px] font-normal font-manrope leading-normal">
                         Khác với các sảnh khác, sảnh Thanh Sen có hình cánh cung. Nếu như sảnh Ngân Sen được ví như đài
                         sen, thì sảnh Thanh Sen lại xem như cánh sen hướng ra mặt hồ. Và điểm tô cho “cánh sen” là hai
                         thuyền rồng tượng trưng những búp sen nhô lên lao. Với kiến trúc hình cong, nên không gian bên
@@ -99,10 +99,10 @@ function ThanhSen() {
                     <div className="w-full h-auto">
                         <img className="w-full h-full" src={ThanhSenImg6} alt="" />
                     </div>
-                    <div className="text-[#c75d15] xs:my-[10px] lg:my-[20px] text-[32px] font-bold font-['MTD Valky Bold'] uppercase">
+                    <div className="text-[#c75d15] xs:my-[10px] lg:my-[20px] text-[32px] font-bold   font-mtd-valky uppercase">
                         Rước dâu bằng thuyền hoa
                     </div>
-                    <div className="text-[#3f3f41] xs:mb-[5px] lg:mb-[10px] xs:text-[16px] xs:leading-[21px] lg:leading-normal text-[18px] font-normal font-['Manrope'] leading-normal">
+                    <div className="text-[#3f3f41] xs:mb-[5px] lg:mb-[10px] xs:text-[16px] xs:leading-[21px] lg:leading-normal text-[18px] font-normal font-manrope leading-normal">
                         Khác với các sảnh khác, sảnh Thanh Sen có hình cánh cung. Nếu như sảnh Ngân Sen được ví như đài
                         sen, thì sảnh Thanh Sen lại xem như cánh sen hướng ra mặt hồ. Và điểm tô cho “cánh sen” là hai
                         thuyền rồng tượng trưng những búp sen nhô lên lao. Với kiến trúc hình cong, nên không gian bên
@@ -130,10 +130,10 @@ function ThanhSen() {
                             <img className="object-cover w-full h-full" src={ThanhSenImg12} alt="" />
                         </div>
                     </div>
-                    <div className="text-[#c75d15] xs:my-[10px] lg:my-[20px] text-[32px] font-bold font-['MTD Valky Bold'] uppercase">
+                    <div className="text-[#c75d15] xs:my-[10px] lg:my-[20px] text-[32px] font-bold   font-mtd-valky uppercase">
                         Rước dâu bằng thuyền hoa
                     </div>
-                    <div className="text-[#3f3f41] xs:mb-[5px] lg:mb-[10px] xs:text-[16px] xs:leading-[21px] lg:leading-normal text-[18px] font-normal font-['Manrope'] leading-normal">
+                    <div className="text-[#3f3f41] xs:mb-[5px] lg:mb-[10px] xs:text-[16px] xs:leading-[21px] lg:leading-normal text-[18px] font-normal font-manrope leading-normal">
                         Khác với các sảnh khác, sảnh Thanh Sen có hình cánh cung. Nếu như sảnh Ngân Sen được ví như đài
                         sen, thì sảnh Thanh Sen lại xem như cánh sen hướng ra mặt hồ. Và điểm tô cho “cánh sen” là hai
                         thuyền rồng tượng trưng những búp sen nhô lên lao. Với kiến trúc hình cong, nên không gian bên
@@ -154,7 +154,7 @@ function ThanhSen() {
                         </div>
                     </div>
                     <div className="xs:mt-[-20px] lg:mb-[30px]">
-                        <div className="text-[#ed7d31] xs:text-[20px] lg:text-[32px] font-bold font-['Manrope']">
+                        <div className="text-[#ed7d31] xs:text-[20px] lg:text-[32px] font-bold font-manrope">
                             Các sảnh tiệc khác
                         </div>
                     </div>

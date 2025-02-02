@@ -50,11 +50,11 @@ function NganSen() {
                 <div className="xs:h-[270px] lg:h-[500px] w-auto relative">
                     <img className="w-full h-full object-cover" src={BannerTitleNganSen} alt="" />
                     <div className="xs:w-[90%] text-center absolute left-[50%] top-[50%] translate-x-[-50%] xs:translate-y-[20px] lg:translate-y-[-50%]">
-                        <span className="text-white xs:text-[18px] lg:text-[40px] xs:leading-tight lg:leading-[48px] font-bold font-['MTD Valky Bold'] uppercase ">
+                        <span className="text-white xs:text-[18px] lg:text-[40px] xs:leading-tight lg:leading-[48px] font-bold   font-mtd-valky uppercase ">
                             Sảnh
                             <br />
                         </span>
-                        <span className=" text-white xs:text-[18px] lg:text-[26px] xs:leading-loose lg:leading-[76.80px]  font-bold font-['MTD Valky Bold'] uppercase leading-[76.80px]">
+                        <span className=" text-white xs:text-[18px] lg:text-[26px] xs:leading-loose lg:leading-[76.80px]  font-bold   font-mtd-valky uppercase leading-[76.80px]">
                             Ngân Sen
                         </span>
                     </div>
@@ -63,13 +63,13 @@ function NganSen() {
                     <img className="w-full bg-cover h-auto" src={NganSenImg1} alt="" />
                     <div
                         className="text-[#3f3f41] 
-                   xs:text-[16px] lg:text-[22px] font-semibold font-['Manrope'] xs:leading-[21px] lg:leading-[30px]"
+                   xs:text-[16px] lg:text-[22px] font-semibold font-manrope xs:leading-[21px] lg:leading-[30px]"
                     >
                         Nếu bạn có nhu cầu tiếp 500 khách, thì sảnh Ngân Sen là lựa chọn hợp lý. Sức chứa của sảnh có
                         thể xếp 37 bàn cho một sự kiện.
                     </div>
 
-                    <div className="text-[#3f3f41] xs:text-[16px] xs:leading-[21px] lg:leading-normal text-[18px] font-normal font-['Manrope'] leading-normal">
+                    <div className="text-[#3f3f41] xs:text-[16px] xs:leading-[21px] lg:leading-normal text-[18px] font-normal font-manrope leading-normal">
                         Ngân Sen là một khu tiệc của nhà hàng Thủy Tạ thuộc Công viên văn hóa Đầm Sen (do Phuthotourist
                         quản lý). Đa số thực khách bước vào nhà hàng đều cho rằng đây là sảnh chính. Bởi vị trí của nó
                         nằm trực diện cổng số 2 CVVH Đầm Sen. Điều này không sai, bởi theo kiến trúc, thì sảnh này là vị
@@ -116,7 +116,7 @@ function NganSen() {
                     </div>
 
                     <div className="xs:mt-[-20px] lg:mb-[30px]">
-                        <div className="text-[#ed7d31] xs:text-[20px] lg:text-[32px] font-bold font-['Manrope']">
+                        <div className="text-[#ed7d31] xs:text-[20px] lg:text-[32px] font-bold font-manrope">
                             Các sảnh tiệc khác
                         </div>
                     </div>

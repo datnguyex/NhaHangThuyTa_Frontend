@@ -172,13 +172,13 @@ function Menu() {
                                 <img className="object-cover" src={currentDish.img} />
                             </div>
                             <div className="flex flex-col gap-[10px] w-full auto">
-                                <div className="text-[#3f3f41] text-[32px] lg:text-[49px] font-bold font-['Manrope']">
+                                <div className="text-[#3f3f41] text-[32px] lg:text-[49px] font-bold font-manrope">
                                     {currentDish.name}
                                 </div>
-                                <div className="text-[#ed7d31]  xs:text-[42px] lg:text-[72px] font-bold font-['MTD Valky Bold']">
+                                <div className="text-[#ed7d31]  xs:text-[42px] lg:text-[72px] font-bold font-mtd-valky">
                                     {currentDish.subName}
                                 </div>
-                                <div className="text-[#3f3f41] xs:text-[18px] lg:text-[25px] font-normal font-['Manrope']">
+                                <div className="text-[#3f3f41] xs:text-[18px] lg:text-[25px] font-normal font-manrope">
                                     {currentDish.description}
                                 </div>
                                 <div className="flex gap-[6px]">
@@ -194,7 +194,7 @@ function Menu() {
                                     ))}
                                 </div>
 
-                                <div className="w-[612.95px] text-[#ed7d31] xs:text-[20px] lg:text-[41px] font-bold font-['Manrope']">
+                                <div className="w-[612.95px] text-[#ed7d31] xs:text-[20px] lg:text-[41px] font-bold font-manrope">
                                     {currentDish.priceStart} - {currentDish.priceEnd} VNĐ
                                 </div>
                             </div>

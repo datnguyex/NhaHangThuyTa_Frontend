@@ -2,28 +2,10 @@ import { TitleListDishMenu } from '~/component/Icon';
 import { BoArgentinaSotTieuDen, ChaGioListMenu, ChimBoCauListMenu, DoiTruongListMenu, GoiListMenu } from '~/Images';
 import { useEffect, useState } from 'react';
 import { fetchMealListData } from '~/API/MenuAPI';
-
-interface Dish {
-    type: string;
-    img: string;
-    title: string;
-    name: string;
-    subName: string;
-    quantity: string;
-    description: string;
-    categories: string[];
-    priceStart: string;
-    priceEnd: string;
-}
-
-type ListMenuProps = {
-    displayMenuMb: boolean;
-    handleCurrentMenu: (e: string) => void;
-    currentMenu: Dish[];
-};
-
-const ListMenu: React.FC<ListMenuProps> = ({ displayMenuMb, handleCurrentMenu, currentMenu }) => {
-    const [menuData, setMenuData] = useState<Dish[]>([]);
+import { TypeDish } from '~/component/Type';
+import { TypeListMenuProps } from '~/component/Type';
+const ListMenu: React.FC<TypeListMenuProps> = ({ displayMenuMb, handleCurrentMenu, currentMenu }) => {
+    const [menuData, setMenuData] = useState<TypeDish[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {

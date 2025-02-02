@@ -18,7 +18,7 @@ const Footer = () => {
                         <img className="w-full h-full object-cover" src={MainLogo} alt="" />
                     </div>
                     <div className="flex flex-col gap-[25px]">
-                        <div className="text-white lg:text-[32px] xs:text-[24px] font-bold font-['MTD Valky Bold'] leading-[38.40px]">
+                        <div className="text-white lg:text-[32px] xs:text-[24px] font-bold   font-mtd-valky leading-[38.40px]">
                             Liên hệ
                         </div>
 
@@ -35,7 +35,7 @@ const Footer = () => {
                                 <div className="py-0.5 min-w-[25px] justify-center items-center flex">
                                     <TelephoneWhite />
                                 </div>
-                                <div className="text-white text-[18px] lg:font-normal xs:text-[14px] font-['Manrope']">
+                                <div className="text-white text-[18px] lg:font-normal xs:text-[14px] font-manrope">
                                     028 3961 2082 - 028 3858 6763
                                 </div>
                             </div>
@@ -43,20 +43,20 @@ const Footer = () => {
                     </div>
                     <div className="flex flex-col gap-[12px]">
                         <div>
-                            <span className="text-white lg:text-[32px] xs:text-[24px] font-bold font-['MTD Valky Bold'] leading-[38.40px]">
+                            <span className="text-white lg:text-[32px] xs:text-[24px] font-bold   font-mtd-valky leading-[38.40px]">
                                 Các đơn vị cùn
                             </span>
-                            <span className="text-white lg:text-[32px] xs:text-[24px] font-bold font-['MTD Valky Bold'] leading-[38.40px]">
+                            <span className="text-white lg:text-[32px] xs:text-[24px] font-bold   font-mtd-valky leading-[38.40px]">
                                 g
                             </span>
-                            <span className="text-white lg:text-[32px] xs:text-[24px] font-bold font-['MTD Valky Bold'] leading-[38.40px]">
+                            <span className="text-white lg:text-[32px] xs:text-[24px] font-bold   font-mtd-valky leading-[38.40px]">
                                 {' '}
                                 hệ thốn
                             </span>
-                            <span className="text-white lg:text-[32px] xs:text-[24px] font-bold font-['MTD Valky Bold'] leading-[38.40px]">
+                            <span className="text-white lg:text-[32px] xs:text-[24px] font-bold   font-mtd-valky leading-[38.40px]">
                                 g<br />
                             </span>
-                            <span className="text-white lg:text-[32px] xs:text-[24px] font-bold font-['MTD Valky Bold'] leading-[38.40px]">
+                            <span className="text-white lg:text-[32px] xs:text-[24px] font-bold   font-mtd-valky leading-[38.40px]">
                                 Phuthotourist
                             </span>
                         </div>
@@ -64,7 +64,7 @@ const Footer = () => {
                             <div className="justify-start items-center gap-2 inline-flex">
                                 <div className="w-3 h-3  bg-white rounded-full" />
                                 <div className="w-[218px] h-[31px] relative ">
-                                    <div className="left-0 top-[2px]  text-white lg:text-[19px] xs:text-[14px] font-normal font-['Manrope'] leading-[27px]">
+                                    <div className="left-0 top-[2px]  text-white lg:text-[19px] xs:text-[14px] font-normal font-manrope leading-[27px]">
                                         Công ty CP DVDL Phú Thọ
                                     </div>
                                     <div className="w-px h-[1.50px] left-0 top-[27px]  opacity-0 bg-white" />
@@ -73,7 +73,7 @@ const Footer = () => {
                             <div className=" justify-start items-center gap-2 inline-flex">
                                 <div className="w-3 h-3  bg-white rounded-full" />
                                 <div className=" relative ">
-                                    <div className="left-0 top-[2px]  text-white lg:text-[19px] xs:text-[14px] font-normal font-['Manrope'] leading-[27px]">
+                                    <div className="left-0 top-[2px]  text-white lg:text-[19px] xs:text-[14px] font-normal font-manrope leading-[27px]">
                                         Khu du lịch sinh thái Vàm Sát
                                     </div>
                                     <div className="w-px h-[1.50px] left-0 top-[27px] opacity-0 bg-white" />
@@ -82,7 +82,7 @@ const Footer = () => {
                             <div className="justify-start items-center gap-2 inline-flex">
                                 <div className="w-3 h-3  bg-white rounded-full" />
                                 <div className="relative ">
-                                    <div className="left-0 top-[2px]  text-white lg:text-[19px] xs:text-[14px] font-normal font-['Manrope'] leading-[27px]">
+                                    <div className="left-0 top-[2px]  text-white lg:text-[19px] xs:text-[14px] font-normal font-manrope leading-[27px]">
                                         Khách sạn Ngọc Lan
                                     </div>
                                     <div className="w-px h-[1.50px] left-0 top-[27px]  opacity-0 bg-white" />
@@ -91,7 +91,7 @@ const Footer = () => {
                             <div className="justify-start items-center gap-2 inline-flex">
                                 <div className="w-3 h-3  bg-white rounded-full" />
                                 <div className="relative ">
-                                    <div className="left-0 top-[2px]  text-white lg:text-[19px] xs:text-[14px] font-normal font-['Manrope'] leading-[27px]">
+                                    <div className="left-0 top-[2px]  text-white lg:text-[19px] xs:text-[14px] font-normal font-manrope leading-[27px]">
                                         Khách sạn Phú Thọ
                                     </div>
                                     <div className="w-px h-[1.50px] left-0 top-[27px]  opacity-0 bg-white" />
@@ -100,7 +100,7 @@ const Footer = () => {
                             <div className="justify-start items-center gap-2 inline-flex">
                                 <div className="w-3 h-3  bg-white rounded-full" />
                                 <div className="relative ">
-                                    <div className="left-0 top-[2px]  text-white lg:text-[19px] xs:text-[14px] font-normal font-['Manrope'] leading-[27px]">
+                                    <div className="left-0 top-[2px]  text-white lg:text-[19px] xs:text-[14px] font-normal font-manrope leading-[27px]">
                                         Trung tâm Du lịch Đầm Sen
                                     </div>
                                     {/* <div className="w-px h-[1.50px] left-0 top-[27px] absolute opacity-0 bg-white" /> */}

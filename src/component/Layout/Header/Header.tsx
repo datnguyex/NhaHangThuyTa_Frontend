@@ -46,40 +46,26 @@ const Header = () => {
                             <img className="w-full h-full object-cover" src={MainLogo} alt="" />
                         </Link>
                         <Link to={'/'} className="xs:hidden">
-                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] leading-[28.80px]">
+                            <span className="text-[#fff] text-[25px] font-bold   font-mtd-valky leading-[28.80px]">
                                 Nhà hàn
                             </span>
-                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] leading-[28.80px]">
+                            <span className="text-[#fff] text-[25px] font-bold   font-mtd-valky leading-[28.80px]">
                                 g<br />
                             </span>
-                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
-                                Thủy
-                            </span>
-                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
-                                {' '}
-                            </span>
-                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
-                                Tạ
-                            </span>
-                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
-                                {' '}
-                            </span>
-                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
-                                Đầm
-                            </span>
-                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
-                                {' '}
-                            </span>
-                            <span className="text-[#fff] text-[25px] font-bold font-['MTD Valky Bold'] uppercase">
-                                Sen
-                            </span>
+                            <span className="text-[#fff] text-[25px] font-bold   font-mtd-valky uppercase">Thủy</span>
+                            <span className="text-[#fff] text-[25px] font-bold   font-mtd-valky uppercase"> </span>
+                            <span className="text-[#fff] text-[25px] font-bold   font-mtd-valky uppercase">Tạ</span>
+                            <span className="text-[#fff] text-[25px] font-bold   font-mtd-valky uppercase"> </span>
+                            <span className="text-[#fff] text-[25px] font-bold   font-mtd-valky uppercase">Đầm</span>
+                            <span className="text-[#fff] text-[25px] font-bold   font-mtd-valky uppercase"> </span>
+                            <span className="text-[#fff] text-[25px] font-bold   font-mtd-valky uppercase">Sen</span>
                         </Link>
                     </div>
                     {/* //content */}
                     <div className="flex items-center gap-[60px] xs:hidden">
                         <Link to={'/menu'} className="justify-start items-start gap-2.5 inline-flex cursor-pointer">
                             <div
-                                className={`text-[21px] font-bold font-['Manrope'] py-[10px] 
+                                className={`text-[21px] font-bold font-manrope py-[10px] 
                                 ${site == 'menu' ? 'text-[#C75D15]' : 'text-[#ffff] '}`}
                             >
                                 Thực đơn
@@ -89,7 +75,7 @@ const Header = () => {
                             <div
                                 onMouseLeave={() => handleVisibleHall(false)}
                                 onMouseEnter={() => handleVisibleHall(true)}
-                                className={`text-[21px] font-bold font-['Manrope'] py-[10px] 
+                                className={`text-[21px] font-bold font-manrope py-[10px] 
                                  ${site == 'kim-sen' || site == 'ngan-sen' || site == 'thanh-sen' || site == 'thuyen-rong' ? 'text-[#C75D15]' : 'text-[#fff] '}`}
                             >
                                 Sảnh tiệc
@@ -104,7 +90,7 @@ const Header = () => {
                                         to={'/hall/thuyen-rong'}
                                         className="hover:bg-[#f0f0f0] active:bg-[#d0d0d0] pl-4 pr-[120px] py-[12px] border-b border-[#e0e0e0] justify-center items-center flex overflow-hidden"
                                     >
-                                        <div className="text-[#4f4f4f] text-[17px] font-normal font-['Manrope'] py-[10px]">
+                                        <div className="text-[#4f4f4f] text-[17px] font-normal font-manrope py-[10px]">
                                             Thuyền rồng Kim Long - Hoàng Long
                                         </div>
                                     </Link>
@@ -112,7 +98,7 @@ const Header = () => {
                                         to={'/hall/ngan-sen'}
                                         className="hover:bg-[#f0f0f0] w-[100%] active:bg-[#d0d0d0] pl-4 pr-[272px] py-[12px] border-b border-[#e0e0e0] justify-start items-center inline-flex overflow-hidden"
                                     >
-                                        <div className="text-[#4f4f4f] text-[17px] font-normal font-['Manrope'] py-[10px]">
+                                        <div className="text-[#4f4f4f] text-[17px] font-normal font-manrope py-[10px]">
                                             Sảnh Ngân Sen
                                         </div>
                                     </Link>
@@ -120,7 +106,7 @@ const Header = () => {
                                         to={'/hall/kim-sen'}
                                         className="hover:bg-[#f0f0f0] w-[100%] active:bg-[#d0d0d0] pl-4 pr-[191px] py-[12px] border-b border-[#e0e0e0] justify-start items-center inline-flex overflow-hidden"
                                     >
-                                        <div className="text-[#4f4f4f] text-[17px] font-normal font-['Manrope'] py-[10px]">
+                                        <div className="text-[#4f4f4f] text-[17px] font-normal font-manrope py-[10px]">
                                             Sảnh Hoàng Sen - Kim Sen
                                         </div>
                                     </Link>
@@ -128,7 +114,7 @@ const Header = () => {
                                         to={'/hall/thanh-sen'}
                                         className="hover:bg-[#f0f0f0] w-[100%] active:bg-[#d0d0d0] pl-4 pr-[264px] py-[12px] border-b justify-start items-center inline-flex overflow-hidden"
                                     >
-                                        <div className="text-[#4f4f4f] text-[17px] font-normal font-['Manrope'] py-[10px]">
+                                        <div className="text-[#4f4f4f] text-[17px] font-normal font-manrope py-[10px]">
                                             Sảnh Thanh Sen
                                         </div>
                                     </Link>
@@ -140,7 +126,7 @@ const Header = () => {
                         <div className="justify-start items-start gap-2.5 inline-flex cursor-pointer">
                             <Link
                                 to={'/room/conference'}
-                                className={`text-[21px] font-bold font-['Manrope'] py-[10px] 
+                                className={`text-[21px] font-bold font-manrope py-[10px] 
                                     ${site == 'conference' ? 'text-[#C75D15]' : 'text-[#fff] '}`}
                             >
                                 Phòng hội nghị
@@ -148,7 +134,7 @@ const Header = () => {
                         </div>
                         <Link
                             to={'/wedding-party-promotion'}
-                            className={`text-[21px] font-bold font-['Manrope'] py-[10px] 
+                            className={`text-[21px] font-bold font-manrope py-[10px] 
                                 ${site == 'wedding-party-promotion' ? 'text-[#C75D15]' : 'text-[#fff] '}`}
                         >
                             Khuyến mãi tiệc cưới
@@ -158,7 +144,7 @@ const Header = () => {
                     <div className="xs:hidden w-[16%] h-[50px] px-[18px] py-[13px] bg-white rounded-xl border flex items-center justify-between">
                         <input
                             placeholder="Tìm kiếm"
-                            className="text-[#666666] w-[90%] h-full outline-none bg-transparent text-[17px] font-normal font-['Manrope']"
+                            className="text-[#666666] w-[90%] h-full outline-none bg-transparent text-[17px] font-normal font-manrope"
                         />
                         <div className="cursor-pointer">
                             <MagnifyingGlassGrey />

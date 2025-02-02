@@ -46,31 +46,31 @@ const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handl
                             <img className="w-full h-full object-cover" src={MainLogo} alt="Main Logo" />
                         </div>
                         <div>
-                            <span className="text-[#434146] text-[19px] font-bold font-['MTD Valky Bold'] leading-snug">
+                            <span className="text-[#434146] text-[19px] font-bold   font-mtd-valky leading-snug">
                                 Nhà hàn
                             </span>
-                            <span className="text-[#434146] text-[19px] font-bold font-['MTD Valky Bold'] leading-snug">
+                            <span className="text-[#434146] text-[19px] font-bold   font-mtd-valky leading-snug">
                                 g<br />
                             </span>
-                            <span className="text-[#434146] text-[21px] font-bold font-['MTD Valky Bold'] uppercase leading-normal">
+                            <span className="text-[#434146] text-[21px] font-bold   font-mtd-valky uppercase leading-normal">
                                 Thủy
                             </span>
-                            <span className="text-[#434146] text-[21px] font-bold font-['MTD Valky Bold'] uppercase leading-normal">
+                            <span className="text-[#434146] text-[21px] font-bold   font-mtd-valky uppercase leading-normal">
                                 {' '}
                             </span>
-                            <span className="text-[#434146] text-[21px] font-bold font-['MTD Valky Bold'] uppercase leading-normal">
+                            <span className="text-[#434146] text-[21px] font-bold   font-mtd-valky uppercase leading-normal">
                                 Tạ
                             </span>
-                            <span className="text-[#434146] text-[21px] font-bold font-['MTD Valky Bold'] uppercase leading-normal">
+                            <span className="text-[#434146] text-[21px] font-bold   font-mtd-valky uppercase leading-normal">
                                 {' '}
                             </span>
-                            <span className="text-[#434146] text-[21px] font-bold font-['MTD Valky Bold'] uppercase leading-normal">
+                            <span className="text-[#434146] text-[21px] font-bold   font-mtd-valky uppercase leading-normal">
                                 Đầm
                             </span>
-                            <span className="text-[#434146] text-[21px] font-bold font-['MTD Valky Bold'] uppercase leading-normal">
+                            <span className="text-[#434146] text-[21px] font-bold   font-mtd-valky uppercase leading-normal">
                                 {' '}
                             </span>
-                            <span className="text-[#434146] text-[21px] font-bold font-['MTD Valky Bold'] uppercase leading-normal">
+                            <span className="text-[#434146] text-[21px] font-bold   font-mtd-valky uppercase leading-normal">
                                 Sen
                             </span>
                         </div>
@@ -83,7 +83,7 @@ const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handl
                             className={`cursor-pointer px-0.5 ${site == 'menu' ? 'border-[#c75d15]' : ''}  border-b-[1.5px] justify-center items-center gap-2.5 inline-flex`}
                         >
                             <div
-                                className={`${site == 'menu' ? 'text-[#c75d15]' : 'text-[#434146]'} text-[18px] font-bold font-['Manrope']`}
+                                className={`${site == 'menu' ? 'text-[#c75d15]' : 'text-[#434146]'} text-[18px] font-bold font-manrope`}
                             >
                                 Thực đơn
                             </div>
@@ -93,7 +93,7 @@ const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handl
                             className={`cursor-pointer px-0.5 ${site == 'conference' ? 'border-[#c75d15]' : ''}  border-b-[1.5px] justify-center items-center gap-2.5 inline-flex`}
                         >
                             <div
-                                className={`${site == 'conference' ? 'text-[#c75d15]' : 'text-[#434146]'} text-[18px] font-bold font-['Manrope']`}
+                                className={`${site == 'conference' ? 'text-[#c75d15]' : 'text-[#434146]'} text-[18px] font-bold font-manrope`}
                             >
                                 Phòng hội nghị
                             </div>
@@ -103,7 +103,7 @@ const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handl
                             className={`cursor-pointer px-0.5 ${site == 'wedding-party-promotion' ? 'border-[#c75d15]' : ''}  border-b-[1.5px] justify-center items-center gap-2.5 inline-flex`}
                         >
                             <div
-                                className={`${site == 'wedding-party-promotion' ? 'text-[#c75d15]' : 'text-[#434146]'} text-[18px] font-bold font-['Manrope']`}
+                                className={`${site == 'wedding-party-promotion' ? 'text-[#c75d15]' : 'text-[#434146]'} text-[18px] font-bold font-manrope`}
                             >
                                 Khuyến mãi tiệc cưới
                             </div>
@@ -113,7 +113,7 @@ const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handl
                             className="justify-center items-center gap-2.5 inline-flex"
                         >
                             <div
-                                className={`${site == 'thuyen-rong' || site == 'ngan-sen' || site == 'kin-sen' || site == 'thanh-sen' ? 'text-[#c75d15]' : 'text-[#434146]'} cursor-pointer px-0.5 text-[18px] font-bold font-['Manrope']`}
+                                className={`${site == 'thuyen-rong' || site == 'ngan-sen' || site == 'kin-sen' || site == 'thanh-sen' ? 'text-[#c75d15]' : 'text-[#434146]'} cursor-pointer px-0.5 text-[18px] font-bold font-manrope`}
                             >
                                 Sảnh tiệc
                             </div>
@@ -126,7 +126,7 @@ const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handl
                                 <div className="h-7 pr-[39px] pb-[9px] border-b justify-start items-center inline-flex">
                                     <Link
                                         to={'/hall/thuyen-rong'}
-                                        className={`cursor-pointer max-w-[284px]  ${site == 'thuyen-rong' ? 'text-[#c75d15]' : 'text-[#4f4f4f]'} text-[15px] font-semibold font-['Manrope']`}
+                                        className={`cursor-pointer max-w-[284px]  ${site == 'thuyen-rong' ? 'text-[#c75d15]' : 'text-[#4f4f4f]'} text-[15px] font-semibold font-manrope`}
                                     >
                                         Thuyền rồng Kim Long - Hoàng Long
                                     </Link>
@@ -134,7 +134,7 @@ const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handl
                                 <div className="h-7 pr-44 pb-[9px] border-b justify-start items-center inline-flex">
                                     <Link
                                         to={'/hall/ngan-sen'}
-                                        className={`max-w-[277px] cursor-pointer ${site == 'ngan-sen' ? 'text-[#c75d15]' : 'text-[#4f4f4f]'} text-[15px] font-semibold font-['Manrope']`}
+                                        className={`max-w-[277px] cursor-pointer ${site == 'ngan-sen' ? 'text-[#c75d15]' : 'text-[#4f4f4f]'} text-[15px] font-semibold font-manrope`}
                                     >
                                         Sảnh Ngân Sen
                                     </Link>
@@ -142,7 +142,7 @@ const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handl
                                 <div className="w-[277px] h-7 pr-[102px] pb-[9px] border-b justify-start items-center inline-flex">
                                     <Link
                                         to={'/hall/hoang-sen'}
-                                        className={`max-w-[277px] cursor-pointer ${site == 'hoang-sen' ? 'text-[#c75d15]' : 'text-[#4f4f4f]'} text-[15px] font-semibold font-['Manrope']`}
+                                        className={`max-w-[277px] cursor-pointer ${site == 'hoang-sen' ? 'text-[#c75d15]' : 'text-[#4f4f4f]'} text-[15px] font-semibold font-manrope`}
                                     >
                                         Sảnh Hoàng Sen
                                     </Link>
@@ -150,7 +150,7 @@ const MobileSubHeader: React.FC<MobileSubHeaderProps> = ({ visibleSubMenu, handl
                                 <div className="w-[277px] h-7 pr-[169px] pb-[9px] border-b justify-start items-center inline-flex">
                                     <Link
                                         to={'/hall/thanh-sen'}
-                                        className={`max-w-[277px] cursor-pointer ${site == 'thanh-sen' ? 'text-[#c75d15]' : 'text-[#4f4f4f]'} text-[15px] font-semibold font-['Manrope']`}
+                                        className={`max-w-[277px] cursor-pointer ${site == 'thanh-sen' ? 'text-[#c75d15]' : 'text-[#4f4f4f]'} text-[15px] font-semibold font-manrope`}
                                     >
                                         Sảnh Thanh Sen
                                     </Link>

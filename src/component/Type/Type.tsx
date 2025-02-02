@@ -50,3 +50,21 @@ export interface TypeSliderThuyenRong {
     sliderData: TypeItemThuyenRong[];
     settings: object;
 }
+export interface TypeDish {
+    type: string;
+    img: string;
+    title: string;
+    name: string;
+    subName: string;
+    quantity: string;
+    description: string;
+    categories: string[];
+    priceStart: string;
+    priceEnd: string;
+}
+
+export type TypeListMenuProps = {
+    displayMenuMb: boolean;
+    handleCurrentMenu: (e: string) => void;
+    currentMenu: TypeDish[];
+};
