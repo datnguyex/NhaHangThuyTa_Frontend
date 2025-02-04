@@ -7,15 +7,14 @@ export const fetchHallDataExcludingKimSen = async () => {
 
         if (snapshot.exists()) {
             const data = snapshot.val();
+
             const { KimSen, ...restData } = data;
             return restData;
         } else {
             console.log('No data available');
-            return [];
         }
     } catch (error) {
         console.error('Error fetching data: ', error);
-        return []; // Trả về mảng rỗng trong trường hợp có lỗi
     }
 };
 export const fetchHallDataExcludingNganSen = async () => {

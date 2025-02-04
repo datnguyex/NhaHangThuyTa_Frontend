@@ -13,6 +13,10 @@ import { fetchMenuData } from '~/API/MenuAPI';
 import './Menu.css';
 
 function Menu() {
+    const [screenSize, setScreenSize] = useState('xs');
+    const [currentMenu, setCurrentMenu] = useState<DishMenu[]>([]);
+
+    const [currentDish, setCurrentDish] = useState<DishMenu | object>({});
     useEffect(() => {
         fetchMenuData().then((menuData: any) => {
             if (menuData && menuData.Salad) {
@@ -24,35 +28,6 @@ function Menu() {
             }
         });
     }, []);
-
-    const [screenSize, setScreenSize] = useState('xs');
-    const [currentMenu, setCurrentMenu] = useState<DishMenu[]>([
-        {
-            type: 'default',
-            img: '',
-            title: '',
-            name: '',
-            subName: '',
-            description: '',
-            quantity: '',
-            categories: [],
-            priceStart: '0',
-            priceEnd: '0',
-        },
-    ]);
-
-    const [currentDish, setCurrentDish] = useState<DishMenu>({
-        type: '',
-        img: '',
-        title: '',
-        name: '',
-        subName: '',
-        description: '',
-        quantity: '',
-        categories: [],
-        priceStart: '',
-        priceEnd: '',
-    });
     const sliderRef = useRef<Slider | null>(null);
     useEffect(() => {
         const handleResize = () => {
@@ -72,8 +47,12 @@ function Menu() {
     const settings = {
         focusOnSelect: true,
         slidesToShow:
-            screenSize === 'xs' ? 3 : currentMenu[0]?.type === 'beef' || currentMenu[0]?.type === 'springRoll' ? 4 : 3,
-        afterChange: (index: any) => {
+            screenSize === 'xs'
+                ? 3
+                : currentMenu.length > 0 && (currentMenu[0]?.type === 'beef' || currentMenu[0]?.type === 'springRoll')
+                  ? 4
+                  : 3,
+        afterChange: (index: number) => {
             setCurrentDish(currentMenu[index]);
         },
         prevArrow: screenSize === 'xs' ? undefined : <CustomArrowPrevMenu onClick={() => handlePrevClick(sliderRef)} />,
@@ -169,54 +148,69 @@ function Menu() {
                     <div className="lg:w-[70%] xs:w-[100%] h-full justify-center flex flex-col">
                         <div className="flex xs:flex-col xs:items-start xs:justify-center lg:items-center lg:justify-start max-h-[45%] ">
                             <div className="xs:w-[60%] xs:h-[60%] lg:w-full lg:h-full ">
-                                <img className="object-cover" src={currentDish.img} />
+                                <img
+                                    className="object-cover"
+                                    src={currentDish && 'img' in currentDish ? (currentDish as DishMenu).img : ''}
+                                />
                             </div>
                             <div className="flex flex-col gap-[10px] w-full auto">
                                 <div className="text-[#3f3f41] text-[32px] lg:text-[49px] font-bold font-manrope">
-                                    {currentDish.name}
+                                    {currentDish && 'name' in currentDish ? (currentDish as DishMenu).name : ''}
                                 </div>
                                 <div className="text-[#ed7d31]  xs:text-[42px] lg:text-[72px] font-bold font-mtd-valky">
-                                    {currentDish.subName}
+                                    {currentDish && 'subName' in currentDish ? (currentDish as DishMenu).subName : ''}
                                 </div>
                                 <div className="text-[#3f3f41] xs:text-[18px] lg:text-[25px] font-normal font-manrope">
-                                    {currentDish.description}
+                                    {currentDish && 'description' in currentDish
+                                        ? (currentDish as DishMenu).description
+                                        : ''}{' '}
+                                    -{' '}
                                 </div>
                                 <div className="flex gap-[6px]">
-                                    {Object.entries(currentDish.categories).map(([key, category], index) => (
-                                        <div
-                                            key={index}
-                                            className="xs:h-[25px] lg:h-[35px] xs:px-[10px] lg:px-[26px] xs:py-0.5 lg:py-1 bg-[#fcbb62] rounded justify-start items-center gap-1.5 inline-flex overflow-hidden"
-                                        >
-                                            <div className="text-white xs:text-[15px] lg:text-[21px] font-bold font-['MJ Satoshi']">
-                                                {category}
+                                    {currentDish && 'categories' in currentDish && currentDish.categories ? (
+                                        Object.entries(currentDish.categories).map(([key, category], index) => (
+                                            <div
+                                                key={index}
+                                                className="xs:h-[25px] lg:h-[35px] xs:px-[10px] lg:px-[26px] xs:py-0.5 lg:py-1 bg-[#fcbb62] rounded justify-start items-center gap-1.5 inline-flex overflow-hidden"
+                                            >
+                                                <div className="text-white xs:text-[15px] lg:text-[21px] font-bold font-['MJ Satoshi']">
+                                                    {category}
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))
+                                    ) : (
+                                        <></>
+                                    )}
                                 </div>
 
                                 <div className="w-[612.95px] text-[#ed7d31] xs:text-[20px] lg:text-[41px] font-bold font-manrope">
-                                    {currentDish.priceStart} - {currentDish.priceEnd} VNĐ
+                                    {currentDish && 'priceStart' in currentDish
+                                        ? (currentDish as DishMenu).priceStart
+                                        : ''}{' '}
+                                    -{' '}
+                                    {currentDish && 'priceEnd' in currentDish ? (currentDish as DishMenu).priceEnd : ''}
                                 </div>
                             </div>
                         </div>
                         <div
-                            className={`mt-[30px] xs:max-w-[100%] menu-slider ${currentMenu[0].type === 'beef' || currentMenu[0].type === 'springRoll' ? 'max-w-[81%]' : 'max-w-[70%]'}`}
+                            className={`mt-[30px] xs:max-w-[100%] menu-slider ${
+                                currentMenu.length > 0 &&
+                                (currentMenu[0].type === 'beef' || currentMenu[0].type === 'springRoll')
+                                    ? 'max-w-[81%]'
+                                    : 'max-w-[70%]'
+                            }`}
                         >
-                            {currentMenu[0].type !== 'salad' && currentMenu[0].type !== 'dove' ? (
+                            {currentMenu.length > 0 &&
+                            currentMenu[0].type !== 'salad' &&
+                            currentMenu[0].type !== 'dove' ? (
                                 <SliderMenu settings={settings} currentMenu={currentMenu} sliderRef={sliderRef} />
-                            ) : (
-                                <></>
-                            )}
+                            ) : null}
                         </div>
                     </div>
                     <div
                         className={`lg:w-[30%] bg-opacity-50 xs:w-[88%] xs:absolute xs:z-[100] xs:top-[55%] xs:translate-y-[-50%] ${displayMenuMb ? 'xs:block' : 'xs:hidden'}`}
                     >
-                        <ListMenu
-                            displayMenuMb={displayMenuMb}
-                            handleCurrentMenu={handleCurrentMenu}
-                            currentMenu={currentMenu}
-                        />
+                        <ListMenu handleCurrentMenu={handleCurrentMenu} currentMenu={currentMenu} />
                     </div>
                 </div>
             </div>

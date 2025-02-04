@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MainLogo } from '~/Images';
-
-interface BannerHomeProps {
-    bannerImg: string;
-}
+import { BannerHomeProps } from '~/component/Type';
 
 function BannerHome({ bannerImg }: BannerHomeProps) {
     return (

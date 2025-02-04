@@ -25,8 +25,9 @@ import { Databasez } from '~/firebase';
 import { useEffect, useState } from 'react';
 import SliderHall from '~/component/Layout/Slider/SliderCustom/SliderHall/SliderHall';
 import { fetchHallDataExcludingThanhSen } from '~/API/HallAPI';
+import { TypeItem } from '~/component/Type';
 function ThanhSen() {
-    const [DataSliderThanhSen, setDataSliderThanhSen] = useState<any>({});
+    const [DataSliderThanhSen, setDataSliderThanhSen] = useState<TypeItem | object>({});
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchHallDataExcludingThanhSen();

@@ -1,8 +1,8 @@
 import Slider from 'react-slick';
-import { TypeSliderThuyenRong } from '~/component/Type';
+import { TypeSlider } from '~/component/Type';
 
-const SliderHall: React.FC<TypeSliderThuyenRong> = ({ sliderData, settings }) => {
-    const dataArray = Array.isArray(sliderData) ? sliderData : Object.values(sliderData);
+const SliderHall: React.FC<TypeSlider> = ({ sliderData, settings }) => {
+    const dataArray = Object.values(sliderData);
 
     return (
         <div className="w-full h-auto mb-[50px]">

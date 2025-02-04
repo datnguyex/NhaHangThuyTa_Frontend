@@ -2,13 +2,13 @@ import { ListThreeDash, MagnifyingGlassGrey } from '~/component/Icon';
 import { MainLogo } from '~/Images';
 import MobileSubHeader from '../MobileSubHeader/MobileSubHeader';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Location } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
     //get name url
     const location = useLocation();
-    const [site, setSite] = useState<any>(location);
+    const [site, setSite] = useState<Location | string>(location);
     useEffect(() => {
         const pathParts = location.pathname.split('/');
         if (location.pathname.startsWith('/hall') || location.pathname.startsWith('/room')) {
@@ -19,13 +19,13 @@ const Header = () => {
     }, [location]);
 
     //display mobile submenu
-    const [visibleSubMenu, setVisibleSubMenu] = useState(false);
+    const [visibleSubMenu, setVisibleSubMenu] = useState<boolean>(false);
     const handleVisible = (e: boolean) => {
         setVisibleSubMenu(e);
     };
 
     //display list hall
-    const [visibleHall, setVisibleHall] = useState(false);
+    const [visibleHall, setVisibleHall] = useState<boolean>(false);
     const handleVisibleHall = (e: boolean) => {
         setVisibleHall(e);
     };

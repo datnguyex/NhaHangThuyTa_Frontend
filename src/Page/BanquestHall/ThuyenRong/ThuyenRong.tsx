@@ -14,9 +14,10 @@ import {
 } from '~/Images';
 import { useEffect, useState } from 'react';
 import { fetchHallDataExcludingThuyenRong } from '~/API/HallAPI';
+import { TypeItem } from '~/component/Type';
 
 function ThuyenRong() {
-    const [DataSliderThuyenRong, setDataSliderThuyenRong] = useState<any>({});
+    const [DataSliderThuyenRong, setDataSliderThuyenRong] = useState<TypeItem | object>({});
 
     const settings = {
         infinite: true,

@@ -19,12 +19,13 @@ import {
 
 import { useEffect, useState } from 'react';
 import SliderHall from '~/component/Layout/Slider/SliderCustom/SliderHall/SliderHall';
+import { TypeItem } from '~/component/Type';
 function KimSen() {
-    const [DataSliderKimSen, setDataSliderKimSen] = useState<any>({});
+    const [DataSliderKimSen, setDataSliderKimSen] = useState<TypeItem | object>({});
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchHallDataExcludingKimSen();
-            setDataSliderKimSen(data || {});
+            setDataSliderKimSen(data);
         };
 
         fetchData();

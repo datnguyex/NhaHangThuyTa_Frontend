@@ -13,17 +13,16 @@ import {
     NganSenImg8,
     NganSenImg9,
 } from '~/Images';
-import { ref, get } from 'firebase/database';
-import { Databasez } from '~/firebase';
 import { useEffect, useState } from 'react';
 import SliderHall from '~/component/Layout/Slider/SliderCustom/SliderHall/SliderHall';
 import { fetchHallDataExcludingNganSen } from '~/API/HallAPI';
+import { TypeItem } from '~/component/Type';
 function NganSen() {
-    const [DataSliderNganSen, setDataSliderNganSen] = useState<any>({});
+    const [DataSliderNganSen, setDataSliderNganSen] = useState<TypeItem | object>({});
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchHallDataExcludingNganSen();
-            setDataSliderNganSen(data || {});
+            setDataSliderNganSen(data);
         };
 
         fetchData();

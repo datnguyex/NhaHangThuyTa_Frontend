@@ -1,10 +1,10 @@
 import { TitleListDishMenu } from '~/component/Icon';
-import { BoArgentinaSotTieuDen, ChaGioListMenu, ChimBoCauListMenu, DoiTruongListMenu, GoiListMenu } from '~/Images';
+
 import { useEffect, useState } from 'react';
 import { fetchMealListData } from '~/API/MenuAPI';
 import { TypeDish } from '~/component/Type';
 import { TypeListMenuProps } from '~/component/Type';
-const ListMenu: React.FC<TypeListMenuProps> = ({ displayMenuMb, handleCurrentMenu, currentMenu }) => {
+const ListMenu: React.FC<TypeListMenuProps> = ({ handleCurrentMenu, currentMenu }) => {
     const [menuData, setMenuData] = useState<TypeDish[]>([]);
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const ListMenu: React.FC<TypeListMenuProps> = ({ displayMenuMb, handleCurrentMen
 
         fetchData();
     }, []);
-    console.log('mealList', menuData);
+
     return (
         <div className="overflow-hidden xs:max-h-[65vh] lg:max-h-[100vh] h-[92vh] lg:relative bg-[#fff9eb] rounded-[32px] ">
             <div className="flex justify-center mt-[30px]">
@@ -38,16 +38,29 @@ const ListMenu: React.FC<TypeListMenuProps> = ({ displayMenuMb, handleCurrentMen
                         >
                             <div className="w-full relative">
                                 <div
-                                    className={`w-[88%] xs:h-[70px] lg:h-full left-[58px] top-0 absolute rounded-lg ${currentMenu[0]?.type == dish.type ? 'bg-[#fcbb62]' : 'bg-[#fff]'}`}
+                                    className={`w-[88%] xs:h-[70px] lg:h-full left-[58px] top-0 absolute rounded-lg ${
+                                        currentMenu.length > 0 && currentMenu[0]?.type === dish.type
+                                            ? 'bg-[#fcbb62]'
+                                            : 'bg-[#fff]'
+                                    }`}
                                 >
                                     <div className="w-full h-full flex flex-col justify-center">
                                         <div
-                                            className={`xs:text-[16px] ml-[15%] lg:text-[31px] font-bold font-[MTD Valky Bold] ${currentMenu[0]?.type == dish.type ? 'text-white' : 'text-[#3F3F41]'}`}
+                                            className={`xs:text-[16px] ml-[15%] lg:text-[31px] font-bold font-[MTD Valky Bold] ${
+                                                currentMenu.length > 0 && currentMenu[0]?.type === dish.type
+                                                    ? 'text-white'
+                                                    : 'text-[#3F3F41]'
+                                            }`}
                                         >
                                             {dish.name}
                                         </div>
+
                                         <div
-                                            className={`text-[18px] ml-[15%] font-bold font-[MTD Valky Bold] ${currentMenu[0]?.type == dish.type ? 'text-white' : 'text-[#9E9E9E]'}`}
+                                            className={`text-[18px] ml-[15%] font-bold font-[MTD Valky Bold] ${
+                                                currentMenu.length > 0 && currentMenu[0]?.type === dish.type
+                                                    ? 'text-white'
+                                                    : 'text-[#9E9E9E]'
+                                            }`}
                                         >
                                             {dish.quantity} món
                                         </div>

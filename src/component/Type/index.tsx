@@ -1,13 +1,1 @@
-export type {
-    DishMenu,
-    TypeSliderKimSen,
-    TypeItemKimSen,
-    TypeSliderNganSen,
-    TypeItemNganSen,
-    TypeSliderThanhSen,
-    TypeItemThanhSen,
-    TypeSliderThuyenRong,
-    TypeItemThuyenRong,
-    TypeDish,
-    TypeListMenuProps,
-} from './Type';
+export type { DishMenu, TypeSlider, TypeItem, TypeDish, TypeListMenuProps, BannerHomeProps } from './Type';
